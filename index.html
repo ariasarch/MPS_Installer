@@ -39,15 +39,14 @@
             padding: 60px 0 40px;
         }
         
-        .logo {
-            font-size: 72px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            background: linear-gradient(90deg, #f0f0f0, #ffffff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -2px;
+        .logo-container {
+            margin-bottom: 20px;
+        }
+        
+        .logo-image {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
         }
         
         .tagline {
@@ -292,8 +291,8 @@
         }
         
         @media (max-width: 768px) {
-            .logo {
-                font-size: 48px;
+            .logo-image {
+                max-width: 300px;
             }
             
             .tagline {
@@ -318,7 +317,9 @@
 <body>
     <div class="container">
         <header class="header">
-            <h1 class="logo">MPS</h1>
+            <div class="logo-container">
+                <img src="https://raw.githubusercontent.com/ariasarch/MPS_installer/main/neumaierlabdesign.png" alt="Neumaier Lab" class="logo-image">
+            </div>
             <p class="tagline">Miniscope Processing Suite</p>
             <span class="version-badge">Version 1.0.0</span>
         </header>
@@ -329,7 +330,7 @@
                 MPS is a comprehensive pipeline for processing miniscope calcium imaging data. From raw videos to publication-ready neural activity traces, MPS guides you through every step with an intuitive interface and powerful algorithms.
             </p>
             <p class="section-content">
-                Built by neuroscientists for neuroscientists, MPS handles motion correction, cell segmentation, signal extraction, and quality control—all optimized for large-scale datasets.
+                Built by neuroscientists for neuroscientists, MPS implements the gold-standard CNMF (Constrained Non-negative Matrix Factorization) algorithm, now enhanced with multi-lasso for advanced spatial segmentation and optimized temporal component updates—all optimized for large-scale datasets.
             </p>
         </section>
         
@@ -337,7 +338,7 @@
             <div class="feature">
                 <div class="feature-icon">🧠</div>
                 <h3 class="feature-title">Complete Pipeline</h3>
-                <p class="feature-description">From raw miniscope videos to analyzed neural activity. Includes motion correction, CNMF-based segmentation, and temporal deconvolution.</p>
+                <p class="feature-description">From raw miniscope videos to analyzed neural activity. Includes motion correction, CNMF-based segmentation with NNDSVD initialization, and advanced temporal processing.</p>
             </div>
             
             <div class="feature">
@@ -416,9 +417,10 @@
             </p>
             
             <div class="code-block">
-Raw Videos → Motion Correction → Spatial Filtering → 
-Cell Detection → Signal Extraction → Temporal Deconvolution → 
-Quality Control → Export
+Raw Videos → Deglow + Denoise → Motion Correction → 
+NNDSVD Initialization → Watershed Segmentation → Spatial Merging → 
+Temporal Extraction → Spatial Noise Estimation → Temporal Update (CNMF) → 
+Spatial Update (CNMF) → Temporal Update (CNMF) → Quality Control → Export
             </div>
             
             <p class="section-content">
