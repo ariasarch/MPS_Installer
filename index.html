@@ -1,294 +1,442 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MPS - Miniscope Processing Suite</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Open Graph / Link Preview Tags -->
+    <meta property="og:title" content="MPS - Miniscope Processing Suite" />
+    <meta property="og:description" content="Professional calcium imaging analysis pipeline" />
+    <meta property="og:url" content="https://ariasarch.github.io/MPS_installer/" />
+    <meta property="og:type" content="website" />
+    
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
         }
-
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f8f9fa;
+            background-color: #121212;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-
-        .header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .header h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            font-weight: 300;
-            letter-spacing: -1px;
-        }
-
-        .header p {
-            font-size: 1.2em;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
+        
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            max-width: 1000px;
+            width: 100%;
             padding: 20px;
         }
-
-        .download-section {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin: -40px auto 40px;
-            max-width: 800px;
+        
+        .header {
             text-align: center;
+            padding: 60px 0 40px;
         }
-
-        .download-btn {
+        
+        .logo {
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(90deg, #f0f0f0, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -2px;
+        }
+        
+        .tagline {
+            font-size: 24px;
+            color: #a9a9a9;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .version-badge {
             display: inline-block;
-            background: #28a745;
-            color: white;
-            padding: 20px 40px;
-            font-size: 1.3em;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: all 0.3s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin: 20px 0;
-        }
-
-        .download-btn:hover {
-            background: #218838;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
-
-        .version-info {
-            color: #666;
-            font-size: 0.9em;
+            background-color: #2a2a2a;
+            color: #cccccc;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
             margin-top: 10px;
         }
-
+        
+        .section {
+            margin: 60px 0;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #ffffff;
+            position: relative;
+            display: inline-block;
+            font-weight: 600;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 50px;
+            height: 3px;
+            background: #444;
+        }
+        
+        .section-content {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #cccccc;
+            margin-bottom: 20px;
+        }
+        
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            margin: 40px 0;
+            margin: 60px 0;
         }
-
-        .feature-card {
-            background: white;
+        
+        .feature {
+            background-color: #1e1e1e;
+            border-radius: 12px;
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
+            border: 1px solid #2a2a2a;
         }
-
-        .feature-card:hover {
+        
+        .feature:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-color: #444;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
-
-        .feature-card h3 {
-            color: #2a5298;
-            margin-bottom: 15px;
-            font-size: 1.3em;
-        }
-
-        .requirements {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            margin: 40px 0;
-        }
-
-        .requirements h2 {
-            color: #2a5298;
+        
+        .feature-icon {
+            font-size: 36px;
             margin-bottom: 20px;
         }
-
+        
+        .feature-title {
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        
+        .feature-description {
+            font-size: 16px;
+            color: #a9a9a9;
+            line-height: 1.6;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 80px 0;
+            padding: 60px;
+            background-color: #1a1a1a;
+            border-radius: 16px;
+            border: 1px solid #2a2a2a;
+        }
+        
+        .cta-title {
+            font-size: 36px;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        
+        .cta-subtitle {
+            font-size: 20px;
+            color: #a9a9a9;
+            margin-bottom: 40px;
+        }
+        
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(90deg, #3a3a3a, #4a4a4a);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 30px;
+            font-size: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .download-button:hover {
+            background: linear-gradient(90deg, #4a4a4a, #5a5a5a);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .download-info {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+        
+        .requirements {
+            background-color: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            padding: 40px;
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+        
+        .requirements h3 {
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
         .requirements ul {
             list-style: none;
             padding-left: 0;
         }
-
+        
         .requirements li {
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
+            padding: 12px 0;
+            border-bottom: 1px solid #2a2a2a;
+            color: #cccccc;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-
+        
+        .requirements li:last-child {
+            border-bottom: none;
+        }
+        
         .requirements li:before {
-            content: "✓ ";
-            color: #28a745;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-
-        .instructions {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 10px;
-            margin: 20px 0;
-            border-left: 4px solid #2a5298;
-        }
-
-        .instructions h3 {
-            color: #2a5298;
-            margin-bottom: 15px;
-        }
-
-        .instructions ol {
-            margin-left: 20px;
-        }
-
-        .instructions li {
-            margin: 10px 0;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 40px 20px;
+            content: "✓";
             color: #666;
-            border-top: 1px solid #eee;
-            margin-top: 60px;
+            font-weight: bold;
+            font-size: 18px;
         }
-
-        .footer a {
-            color: #2a5298;
+        
+        .warning-box {
+            background-color: #2a2a2a;
+            border: 1px solid #444;
+            color: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        .warning-box strong {
+            color: #ffffff;
+        }
+        
+        footer {
+            margin-top: auto;
+            width: 100%;
+            background-color: #0a0a0a;
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid #2a2a2a;
+        }
+        
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            color: #a9a9a9;
             text-decoration: none;
+            transition: color 0.2s ease;
+            font-size: 16px;
         }
-
-        .footer a:hover {
-            text-decoration: underline;
+        
+        .footer-link:hover {
+            color: #ffffff;
         }
-
-        .warning {
-            background: #fff3cd;
-            border: 1px solid #ffeeba;
-            color: #856404;
-            padding: 15px;
-            border-radius: 5px;
+        
+        .footer-text {
+            font-size: 14px;
+            color: #666;
+            margin-top: 20px;
+        }
+        
+        .code-block {
+            background-color: #0a0a0a;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            padding: 20px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 14px;
+            color: #cccccc;
+            overflow-x: auto;
             margin: 20px 0;
         }
-
+        
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2em;
+            .logo {
+                font-size: 48px;
             }
             
-            .download-section {
-                padding: 20px;
+            .tagline {
+                font-size: 20px;
             }
             
-            .download-btn {
-                padding: 15px 30px;
-                font-size: 1.1em;
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .cta-section {
+                padding: 40px 20px;
+            }
+            
+            .download-button {
+                padding: 16px 32px;
+                font-size: 18px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>MPS</h1>
-        <p>Miniscope Processing Suite - Comprehensive calcium imaging analysis pipeline</p>
-    </div>
-
     <div class="container">
-        <div class="download-section">
-            <h2>Download MPS for Windows</h2>
-            <p>One-click installer for the complete miniscope analysis pipeline</p>
-            <a href="https://github.com/ariasarch/MPS_installer/releases/latest/download/MPS_Setup_v1.0.0.exe" class="download-btn">
-                ⬇ Download Installer
-            </a>
-            <div class="version-info">Version 1.0.0 • Windows 10/11 (64-bit)</div>
-            
-            <div class="warning">
-                <strong>Note:</strong> Installation requires ~10GB of disk space and takes 15-20 minutes to complete. A stable internet connection is required.
-            </div>
-        </div>
+        <header class="header">
+            <h1 class="logo">MPS</h1>
+            <p class="tagline">Miniscope Processing Suite</p>
+            <span class="version-badge">Version 1.0.0</span>
+        </header>
 
-        <div class="instructions">
-            <h3>Quick Installation Guide</h3>
-            <ol>
-                <li>Download the installer using the button above</li>
-                <li>Right-click <code>installer.bat</code> and select "Run as administrator"</li>
-                <li>Follow the prompts (Git and Conda will be installed if needed)</li>
-                <li>Wait for package installation (15-20 minutes)</li>
-                <li>Launch MPS using the desktop shortcut</li>
-            </ol>
-        </div>
-
+        <section class="section">
+            <h2 class="section-title">🔬 Professional Calcium Imaging Analysis</h2>
+            <p class="section-content">
+                MPS is a comprehensive pipeline for processing miniscope calcium imaging data. From raw videos to publication-ready neural activity traces, MPS guides you through every step with an intuitive interface and powerful algorithms.
+            </p>
+            <p class="section-content">
+                Built by neuroscientists for neuroscientists, MPS handles motion correction, cell segmentation, signal extraction, and quality control—all optimized for large-scale datasets.
+            </p>
+        </section>
+        
         <div class="features">
-            <div class="feature-card">
-                <h3>🧠 Complete Pipeline</h3>
-                <p>From raw miniscope videos to analyzed neural activity. Includes motion correction, cell segmentation, and signal extraction.</p>
+            <div class="feature">
+                <div class="feature-icon">🧠</div>
+                <h3 class="feature-title">Complete Pipeline</h3>
+                <p class="feature-description">From raw miniscope videos to analyzed neural activity. Includes motion correction, CNMF-based segmentation, and temporal deconvolution.</p>
             </div>
-            <div class="feature-card">
-                <h3>🖥️ User-Friendly GUI</h3>
-                <p>Step-by-step interface guides you through the entire analysis process with real-time visualization.</p>
+            
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Optimized Performance</h3>
+                <p class="feature-description">Leverages Dask for parallel processing and memory-efficient computation. Process hours of recordings without running out of RAM.</p>
             </div>
-            <div class="feature-card">
-                <h3>⚡ Optimized Performance</h3>
-                <p>Leverages Dask for parallel processing and efficient memory management of large datasets.</p>
+            
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <h3 class="feature-title">Real-time Visualization</h3>
+                <p class="feature-description">Monitor your analysis progress with live previews and quality metrics. Debug terminal shows detailed processing information.</p>
             </div>
-            <div class="feature-card">
-                <h3>📊 Debug Terminal</h3>
-                <p>Terminal window stays open during operation, showing real-time processing information and debug output.</p>
+            
+            <div class="feature">
+                <div class="feature-icon">💾</div>
+                <h3 class="feature-title">Flexible Export</h3>
+                <p class="feature-description">Export to multiple formats including Zarr, NumPy, and JSON. Compatible with downstream analysis in Python, MATLAB, or R.</p>
             </div>
-            <div class="feature-card">
-                <h3>💾 Multiple Export Formats</h3>
-                <p>Export results in Zarr, NumPy, JSON, and Pickle formats for compatibility with your analysis pipeline.</p>
+            
+            <div class="feature">
+                <div class="feature-icon">🔄</div>
+                <h3 class="feature-title">Reproducible Science</h3>
+                <p class="feature-description">Save and share parameter files to ensure consistent results across sessions, datasets, and collaborators.</p>
             </div>
-            <div class="feature-card">
-                <h3>🔄 Reproducible Analysis</h3>
-                <p>Save and load parameter files to ensure consistent results across sessions and datasets.</p>
+            
+            <div class="feature">
+                <div class="feature-icon">🖥️</div>
+                <h3 class="feature-title">User-Friendly GUI</h3>
+                <p class="feature-description">Step-by-step interface guides you through the analysis. No command-line experience required—just click and process.</p>
             </div>
         </div>
+
+        <div class="cta-section">
+            <h2 class="cta-title">Ready to Analyze Your Data?</h2>
+            <p class="cta-subtitle">Download MPS and start processing in minutes</p>
+            <a href="https://github.com/ariasarch/MPS_installer/releases/latest/download/MPS_Setup_v1.0.0.exe" class="download-button">
+                <span>⬇</span>
+                <span>Download for Windows</span>
+            </a>
+            <p class="download-info">Windows 10/11 • 64-bit • ~10 GB disk space required</p>
+            
+            <div class="warning-box">
+                <strong>Note:</strong> Windows may show an "Unknown Publisher" warning. This is normal for software from individual developers and research labs. Click "More info" → "Run anyway" to proceed with installation.
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Installation Process</h2>
+            <p class="section-content">
+                The installer handles everything automatically:
+            </p>
+            <ol style="color: #cccccc; font-size: 18px; line-height: 2; margin-left: 20px;">
+                <li>Downloads MPS from GitHub</li>
+                <li>Creates desktop and Start Menu shortcuts</li>
+                <li>On first run, automatically sets up the Python environment (15-20 minutes)</li>
+                <li>After initial setup, MPS launches instantly</li>
+            </ol>
+        </section>
 
         <div class="requirements">
-            <h2>System Requirements</h2>
+            <h3>System Requirements</h3>
             <ul>
                 <li>Windows 10 or 11 (64-bit)</li>
-                <li>16 GB RAM minimum (32 GB recommended)</li>
+                <li>16 GB RAM minimum (32 GB recommended for large datasets)</li>
                 <li>10 GB available disk space</li>
                 <li>Stable internet connection for installation</li>
-                <li>Administrator privileges for installation</li>
+                <li>Git for Windows (installer will prompt if missing)</li>
             </ul>
         </div>
 
-        <div class="instructions">
-            <h3>Troubleshooting</h3>
-            <p>If you encounter issues during installation:</p>
-            <ul>
-                <li><strong>Git not found:</strong> The installer will prompt you to install Git for Windows</li>
-                <li><strong>Conda not found:</strong> Choose to install Miniconda automatically when prompted</li>
-                <li><strong>Installation hangs:</strong> Package installation takes time - ensure stable internet</li>
-                <li><strong>MPS won't start:</strong> Check the terminal output for specific error messages</li>
-            </ul>
-            <p>For detailed troubleshooting, see the <a href="https://github.com/ariasarch/MPS_1.0.0/blob/main/README_INSTALLER.md">installation guide</a>.</p>
+        <section class="section">
+            <h2 class="section-title">Processing Pipeline Overview</h2>
+            <p class="section-content">
+                MPS implements a sophisticated multi-step pipeline based on the latest calcium imaging analysis methods:
+            </p>
+            
+            <div class="code-block">
+Raw Videos → Motion Correction → Spatial Filtering → 
+Cell Detection → Signal Extraction → Temporal Deconvolution → 
+Quality Control → Export
+            </div>
+            
+            <p class="section-content">
+                Each step is optimized for miniscope data, with parameters that can be fine-tuned for your specific experimental conditions. The GUI provides real-time feedback and visualization at every stage.
+            </p>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://github.com/ariasarch/MPS_1.0.0" class="footer-link">GitHub Repository</a>
+                <a href="https://github.com/ariasarch/MPS_1.0.0/issues" class="footer-link">Report Issues</a>
+                <a href="https://github.com/ariasarch/MPS_1.0.0/blob/main/README.md" class="footer-link">Documentation</a>
+                <a href="mailto:support@neumaierlab.com" class="footer-link">Contact Support</a>
+            </div>
+            <p class="footer-text">© 2024 Neumaier Lab • MPS - Miniscope Processing Suite</p>
         </div>
-    </div>
-
-    <div class="footer">
-        <p>
-            <a href="https://github.com/ariasarch/MPS_1.0.0">GitHub Repository</a> • 
-            <a href="https://github.com/ariasarch/MPS_1.0.0/issues">Report Issues</a> • 
-            <a href="https://github.com/ariasarch/MPS_1.0.0/blob/main/README.md">Documentation</a>
-        </p>
-        <p>© 2024 MPS - Miniscope Processing Suite</p>
-    </div>
+    </footer>
 </body>
 </html>
