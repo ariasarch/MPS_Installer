@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MPS – Documentation</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;line-height:1.6;background:#f8f9fa;color:#333}
+    .topbar{background:#fff;border-bottom:1px solid #eee}
+    .nav{max-width:1200px;margin:0 auto;padding:10px 16px;display:flex;gap:16px;align-items:center}
+    .nav a{color:#2a5298;text-decoration:none;padding:6px 10px;border-radius:6px}
+    .nav a:hover{background:#eef3ff}
+    .brand{display:flex;align-items:center;gap:10px;margin-right:auto}
+    .brand img{width:36px;height:36px;object-fit:contain;border-radius:6px}
+    .header{background:linear-gradient(135deg,#1e3c72 0%,#2a5298 100%);color:#fff;padding:56px 20px;text-align:center}
+    .header h1{font-weight:300;letter-spacing:-.5px;font-size:2.2em}
+    .container{max-width:1000px;margin:0 auto;padding:20px}
+    .card{background:#fff;padding:30px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.05);border:1px solid #eee;margin:18px 0}
+    code{background:#eef3ff;padding:2px 6px;border-radius:6px}
+    ul,ol{margin-left:18px}
+    .footer{text-align:center;padding:36px 20px;color:#666;border-top:1px solid #eee;margin-top:20px}
+    .footer a{color:#2a5298;text-decoration:none}
+    .footer a:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="nav">
+      <div class="brand">
+        <img src="neumaierlabdesign.png" alt="MPS logo">
+        <a href="index.html"><strong>MPS</strong></a>
+      </div>
+      <a href="windows.html">Windows</a>
+      <a href="mac.html">macOS</a>
+      <a href="docs.html">Documentation</a>
+      <a href="support.html">Support</a>
+      <a href="https://github.com/ariasarch/MPS_1.0.0" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+
+  <div class="header">
+    <h1>Documentation</h1>
+    <p>Quick references, pipeline overview, and links to the full README.</p>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h2>Getting Started</h2>
+      <ul>
+        <li>Download: <a href="windows.html">Windows</a> or <a href="mac.html">macOS</a></li>
+        <li>First run creates a local environment and logs. Keep the Terminal open and watch for progress messages.</li>
+        <li>Project repo: <a href="https://github.com/ariasarch/MPS_1.0.0" target="_blank" rel="noopener">github.com/ariasarch/MPS_1.0.0</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Pipeline Overview</h2>
+      <ol>
+        <li>Setup & Data Loading (<code>step1_setup.py</code>, <code>step2a_video_loading.py</code>)</li>
+        <li>Processing & Motion Estimation (<code>step2b_processing.py</code>, <code>step2c_motion_estimation.py</code>, <code>motion_correction.py</code>)</li>
+        <li>Erroneous Frames & Transform (<code>step2d_erroneous_frames.py</code>, <code>step2e_transformation.py</code>)</li>
+        <li>Validation & Cropping (<code>step2f_validation.py</code>, <code>step3a_cropping.py</code>)</li>
+        <li>SVD & Analysis (<code>step3b_svd.py</code>, <code>step3c_svd_analysis.py</code>)</li>
+        <li>Watershed & Segmentation (<code>step4a_watershed_search.py</code> … <code>step4g_temporal_merging.py</code>)</li>
+        <li>Noise Est., Validation Setup (<code>step5a_noise_estimation.py</code>, <code>step5b_validation_setup.py</code>)</li>
+        <li>YRA & Temporal Updates (<code>step6a_yra_computation.py</code>, <code>step6d_update_temporal.py</code> …)</li>
+        <li>Spatial Update & Merging Validation (<code>step7a_dilation.py</code> … <code>step7f_merging_validation.py</code>)</li>
+        <li>Final Updates & Save (<code>step8a_final_temporal_update.py</code> … <code>step8c_filter_and_save.py</code>)</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>Parameters & Files</h2>
+      <ul>
+        <li>Global parameters: <code>general_processing_parameters.json</code></li>
+        <li>Parameter storage helpers: <code>parameter_storage.py</code></li>
+        <li>Utilities & plotting: <code>utilities.py</code>, <code>plotting_functions.py</code></li>
+        <li>GUI entry: newest <code>GUI_PSS*.py</code> (auto-selected by the launcher)</li>
+        <li>Logs: created under <code>logs/</code> with timestamps</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Full Guides</h2>
+      <ul>
+        <li><a href="https://github.com/ariasarch/MPS_1.0.0/blob/main/README.md" target="_blank" rel="noopener">README.md (overview & usage)</a></li>
+        <li><a href="https://github.com/ariasarch/MPS_1.0.0/blob/main/README_INSTALLER.md" target="_blank" rel="noopener">Windows installer guide</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>
+      <a href="index.html">Home</a> •
+      <a href="windows.html">Windows</a> •
+      <a href="mac.html">macOS</a> •
+      <a href="support.html">Support</a>
+    </p>
+  </div>
+</body>
+</html>
