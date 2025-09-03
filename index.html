@@ -3,163 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MPS - Miniscope Processing Suite</title>
+  <title>MPS – Miniscope Processing Suite</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="neumaierlabdesign.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="neumaierlabdesign.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="neumaierlabdesign.png">
+  <meta name="theme-color" content="#000000">
+
   <style>
-    /* ===== Original-style base ===== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #f8f9fa;
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+      line-height:1.6; background:#fff; color:#111;
     }
 
-    /* ===== Header / Nav ===== */
-    .topbar {
-      background:#fff;
-      border-bottom:1px solid #eee;
-    }
+    /* Nav / Brand */
+    .topbar { background:#fff; border-bottom:1px solid #e6e6e6; }
     .topbar .nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 10px 16px;
-      display:flex;
-      align-items:center;
-      gap: 16px;
+      max-width:1200px; margin:0 auto; padding:10px 16px;
+      display:flex; align-items:center; gap:16px;
     }
-    .nav a {
-      color:#2a5298;
-      text-decoration:none;
-      padding:6px 10px;
-      border-radius:6px;
-    }
-    .nav a:hover { background:#eef3ff; }
+    .brand { display:flex; align-items:center; gap:10px; margin-right:auto; }
+    .brand img { width:36px; height:36px; object-fit:contain; border-radius:6px; }
+    .nav a { color:#000; text-decoration:none; padding:6px 10px; border-radius:6px; }
+    .nav a:hover { background:#000; color:#fff; }
 
-    .brand {
-      display:flex; align-items:center; gap:10px; margin-right:auto;
-    }
-    .brand img {
-      width:36px; height:36px; object-fit:contain; border-radius:6px;
-    }
-    .brand strong { color:#2a5298; }
+    /* Header */
+    .header { background:#000; color:#fff; padding:60px 20px; text-align:center; }
+    .header h1 { font-size:3em; font-weight:300; letter-spacing:-1px; margin-bottom:10px; }
+    .header p { opacity:.95; max-width:700px; margin:0 auto; }
 
-    .header {
-      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .header h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-      font-weight: 300;
-      letter-spacing: -1px;
-    }
-    .header p {
-      font-size: 1.2em;
-      opacity: 0.9;
-      max-width: 700px;
-      margin: 0 auto;
-    }
+    .container { max-width:1200px; margin:0 auto; padding:20px; }
 
-    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-
-    /* ===== Download cards ===== */
+    /* Download section */
     .download-section {
-      background: white;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      margin: -40px auto 40px;
-      max-width: 1000px;
-      text-align: center;
+      background:#fff; padding:40px; border-radius:10px; border:1px solid #e6e6e6;
+      margin:-40px auto 40px; max-width:1000px; text-align:center;
     }
     .download-grid {
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap:24px;
-      margin-top: 16px;
-      text-align: left;
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:24px; margin-top:16px; text-align:left;
     }
     .feature-card {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      transition: transform 0.3s;
-      border: 1px solid #eee;
+      background:#fff; padding:30px; border-radius:10px; border:1px solid #e6e6e6;
+      transition:transform .2s;
     }
-    .feature-card:hover { transform: translateY(-5px); box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
-    .feature-card h3 { color: #2a5298; margin-bottom: 10px; font-size: 1.2em; }
+    .feature-card:hover { transform:translateY(-3px); }
+    .feature-card h3 { color:#000; margin-bottom:10px; font-size:1.2em; }
 
     .download-btn {
-      display: inline-block;
-      background: #28a745;
-      color: white;
-      padding: 14px 22px;
-      font-size: 1.05em;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: all 0.2s;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      margin: 12px 0 4px;
-      font-weight: 600;
+      display:inline-block; background:#000; color:#fff; padding:14px 22px; border-radius:8px;
+      text-decoration:none; font-weight:600; margin:12px 0 4px;
     }
-    .download-btn:hover { background: #218838; transform: translateY(-1px); }
-    .version-info { color:#666; font-size:0.9em; }
+    .download-btn:hover { filter:brightness(.9); }
 
-    /* ===== Features & sections ===== */
+    .version-info { color:#555; font-size:.9em; }
+
+    /* Other sections */
     .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin: 30px 0;
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:24px; margin:30px 0;
     }
     .requirements, .instructions {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      margin: 20px 0;
-      border-left: 4px solid #2a5298;
-    }
-    .requirements h2, .instructions h3 { color:#2a5298; margin-bottom: 12px; }
-    .requirements ul { list-style: none; padding-left: 0; }
-    .requirements li { padding: 10px 0; border-bottom: 1px solid #eee; }
-    .requirements li:before { content: "✓ "; color:#28a745; font-weight:bold; margin-right: 10px; }
-
-    .warning {
-      background: #fff3cd;
-      border: 1px solid #ffeeba;
-      color: #856404;
-      padding: 12px;
-      border-radius: 8px;
-      margin-top: 10px;
+      background:#fff; padding:30px; border-radius:10px; border:1px solid #e6e6e6; margin:20px 0;
+      border-left:4px solid #000;
     }
 
-    .docs-section .links a { color:#2a5298; text-decoration:none; }
+    .warning { background:#f7f7f7; border:1px solid #e6e6e6; color:#000; padding:12px; border-radius:8px; margin-top:10px; }
+
+    .docs-section .links a { color:#000; text-decoration:none; }
     .docs-section .links a:hover { text-decoration:underline; }
 
-    .footer {
-      text-align: center;
-      padding: 40px 20px;
-      color: #666;
-      border-top: 1px solid #eee;
-      margin-top: 40px;
-    }
-    .footer a { color:#2a5298; text-decoration:none; }
+    .footer { text-align:center; padding:40px 20px; color:#555; border-top:1px solid #e6e6e6; margin-top:40px; }
+    .footer a { color:#000; text-decoration:none; }
     .footer a:hover { text-decoration:underline; }
 
-    @media (max-width: 768px) {
-      .header h1 { font-size: 2em; }
-      .download-section { padding: 24px; }
+    @media (max-width:768px){
+      .header h1{font-size:2em;}
+      .download-section{padding:24px;}
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Nav with logo -->
+  <!-- Nav -->
   <div class="topbar">
     <div class="nav">
       <div class="brand">
@@ -174,11 +102,13 @@
     </div>
   </div>
 
+  <!-- Hero -->
   <div class="header">
     <h1>MPS</h1>
     <p>Miniscope Processing Suite – comprehensive calcium imaging analysis pipeline with a clean GUI.</p>
   </div>
 
+  <!-- Content -->
   <div class="container">
     <!-- Downloads -->
     <div class="download-section">
@@ -186,28 +116,22 @@
       <p>Select your platform</p>
 
       <div class="download-grid">
-        <!-- Windows card -->
+        <!-- Windows -->
         <div class="feature-card">
           <h3>🪟 Windows</h3>
           <p>One-click installer for Windows 10/11 (64-bit).</p>
-          <a class="download-btn" href="https://github.com/ariasarch/MPS_1.0.0/releases/latest/download/MPS_Setup_v1.0.0.exe">
-            ⬇ Download for Windows (.exe)
-          </a>
+          <a class="download-btn" href="https://github.com/ariasarch/MPS_1.0.0/releases/latest/download/MPS_Setup_v1.0.0.exe">⬇ Download for Windows (.exe)</a>
           <div class="version-info">Version 1.0.0 • Requires admin • ~10 GB temporary disk during setup</div>
           <div class="warning"><strong>Tip:</strong> Right-click → <em>Run as administrator</em>.</div>
           <p style="margin-top:10px"><a href="windows.html">Windows install guide →</a></p>
         </div>
 
-        <!-- macOS card -->
+        <!-- macOS -->
         <div class="feature-card">
           <h3>🍎 macOS</h3>
           <p>Signed & notarized launcher app (Apple Silicon & Intel).</p>
-          <a class="download-btn" href="https://github.com/ariasarch/MPS_1.0.0/releases/latest/download/MPS_Launcher_macOS_v1.0.0.zip">
-            ⬇ Download for macOS (ZIP)
-          </a>
-          <div class="version-info">
-            Prefer a disk image? <a href="https://github.com/ariasarch/MPS_1.0.0/releases/latest/download/MPS_Launcher_macOS_v1.0.0.dmg">Download DMG</a>
-          </div>
+          <a class="download-btn" href="https://github.com/ariasarch/MPS_1.0.0/releases/latest/download/MPS_Launcher_macOS_v1.0.0.zip">⬇ Download for macOS (ZIP)</a>
+          <div class="version-info">Prefer a disk image? <a href="https://github.com/ariasarch/MPS_1.0.0/releases/latest/download/MPS_Launcher_macOS_v1.0.0.dmg">Download DMG</a></div>
           <div class="version-info">Version 1.0.0 • macOS 12+ recommended</div>
           <div class="warning"><strong>First run:</strong> Double-click the app. If prompted, click <em>Open</em> (it’s signed & notarized).</div>
           <p style="margin-top:10px"><a href="mac.html">macOS quick start →</a></p>
@@ -217,25 +141,13 @@
 
     <!-- Highlights -->
     <div class="cards">
-      <div class="feature-card">
-        <h3>🧠 Complete Pipeline</h3>
-        <p>From raw miniscope videos to analyzed neural activity: motion correction, segmentation, signal extraction, and more.</p>
-      </div>
-      <div class="feature-card">
-        <h3>🖥️ User-Friendly GUI</h3>
-        <p>Step-by-step interface with live visualization and a debug terminal that stays open during processing.</p>
-      </div>
-      <div class="feature-card">
-        <h3>⚡ Optimized Performance</h3>
-        <p>Dask-powered parallelism and memory-aware chunking for large datasets.</p>
-      </div>
-      <div class="feature-card">
-        <h3>🔄 Reproducible Analysis</h3>
-        <p>Save/load parameter files. Export to Zarr, NumPy, JSON, and Pickle for downstream workflows.</p>
-      </div>
+      <div class="feature-card"><h3>🧠 Complete Pipeline</h3><p>From raw miniscope videos to analyzed neural activity: motion correction, segmentation, signal extraction, and more.</p></div>
+      <div class="feature-card"><h3>🖥️ User-Friendly GUI</h3><p>Step-by-step interface with live visualization and a debug terminal that stays open during processing.</p></div>
+      <div class="feature-card"><h3>⚡ Optimized Performance</h3><p>Dask-powered parallelism and memory-aware chunking for large datasets.</p></div>
+      <div class="feature-card"><h3>🔄 Reproducible Analysis</h3><p>Save/load parameter files. Export to Zarr, NumPy, JSON, and Pickle for downstream workflows.</p></div>
     </div>
 
-    <!-- Documentation section (requested) -->
+    <!-- Docs callout -->
     <div class="requirements docs-section">
       <h2 style="margin-bottom:8px;">Documentation</h2>
       <p>Start here for walkthroughs, parameter details, and pipeline steps.</p>
@@ -247,14 +159,14 @@
     </div>
   </div>
 
+  <!-- Footer -->
   <div class="footer">
     <p>
       <a href="https://github.com/ariasarch/MPS_1.0.0">GitHub Repository</a> •
       <a href="https://github.com/ariasarch/MPS_1.0.0/issues">Report Issues</a> •
       <a href="docs.html">Documentation</a>
     </p>
-    <p>© 2024 MPS - Miniscope Processing Suite</p>
+    <p>© 2024 MPS – Miniscope Processing Suite</p>
   </div>
-
 </body>
 </html>
