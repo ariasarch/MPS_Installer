@@ -5,27 +5,97 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MPS – Documentation</title>
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;line-height:1.6;background:#f8f9fa;color:#333}
-    .topbar{background:#fff;border-bottom:1px solid #eee}
-    .nav{max-width:1200px;margin:0 auto;padding:10px 16px;display:flex;gap:16px;align-items:center}
-    .nav a{color:#2a5298;text-decoration:none;padding:6px 10px;border-radius:6px}
-    .nav a:hover{background:#eef3ff}
-    .brand{display:flex;align-items:center;gap:10px;margin-right:auto}
-    .brand img{width:36px;height:36px;object-fit:contain;border-radius:6px}
-    .header{background:linear-gradient(135deg,#1e3c72 0%,#2a5298 100%);color:#fff;padding:56px 20px;text-align:center}
-    .header h1{font-weight:300;letter-spacing:-.5px;font-size:2.2em}
-    .container{max-width:1000px;margin:0 auto;padding:20px}
-    .card{background:#fff;padding:30px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.05);border:1px solid #eee;margin:18px 0}
-    code{background:#eef3ff;padding:2px 6px;border-radius:6px}
-    ul,ol{margin-left:18px}
-    .footer{text-align:center;padding:36px 20px;color:#666;border-top:1px solid #eee;margin-top:20px}
-    .footer a{color:#2a5298;text-decoration:none}
-    .footer a:hover{text-decoration:underline}
+    /* ===== Original-style base ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f8f9fa;
+    }
+
+    /* ===== Header / Nav ===== */
+    .topbar { background:#fff; border-bottom:1px solid #eee; }
+    .nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 16px;
+      display:flex;
+      align-items:center;
+      gap: 16px;
+    }
+    .nav a { color:#2a5298; text-decoration:none; padding:6px 10px; border-radius:6px; }
+    .nav a:hover { background:#eef3ff; }
+
+    .brand { display:flex; align-items:center; gap:10px; margin-right:auto; }
+    .brand img { width:36px; height:36px; object-fit:contain; border-radius:6px; }
+    .brand strong { color:#2a5298; }
+
+    .header {
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      color: white;
+      padding: 56px 20px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .header h1 {
+      font-size: 2.4em;
+      margin-bottom: 10px;
+      font-weight: 300;
+      letter-spacing: -0.5px;
+    }
+    .header p { opacity: 0.92; max-width: 760px; margin: 0 auto; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 22px 16px 44px; }
+
+    /* ===== Cards / Sections ===== */
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      border: 1px solid #eee;
+      margin: 18px 0;
+    }
+    .card h2 { color:#2a5298; margin-bottom: 10px; }
+    .card h3 { color:#2a5298; margin: 14px 0 8px; }
+    .muted { color:#666; }
+
+    .two-col {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap:20px;
+    }
+
+    ul { margin-left: 20px; }
+    ol { margin-left: 20px; }
+    li + li { margin-top: 6px; }
+
+    code { background:#eef3ff; padding:2px 6px; border-radius:6px; }
+
+    .warning {
+      background: #fff3cd;
+      border: 1px solid #ffeeba;
+      color: #856404;
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #666;
+      border-top: 1px solid #eee;
+      margin-top: 30px;
+    }
+    .footer a { color:#2a5298; text-decoration:none; }
+    .footer a:hover { text-decoration:underline; }
   </style>
 </head>
 <body>
 
+  <!-- Top Nav with logo -->
   <div class="topbar">
     <div class="nav">
       <div class="brand">
@@ -41,55 +111,206 @@
   </div>
 
   <div class="header">
-    <h1>Documentation</h1>
-    <p>Quick references, pipeline overview, and links to the full README.</p>
+    <h1>MPS Documentation</h1>
+    <p>Everything you need to install, run, and understand the Miniscope Processing Suite. Includes system requirements, quick start for Windows & macOS, and a step-by-step pipeline overview.</p>
   </div>
 
-  <div class="container">
-    <div class="card">
-      <h2>Getting Started</h2>
-      <ul>
-        <li>Download: <a href="windows.html">Windows</a> or <a href="mac.html">macOS</a></li>
-        <li>First run creates a local environment and logs. Keep the Terminal open and watch for progress messages.</li>
-        <li>Project repo: <a href="https://github.com/ariasarch/MPS_1.0.0" target="_blank" rel="noopener">github.com/ariasarch/MPS_1.0.0</a></li>
-      </ul>
-    </div>
+  <main class="container">
 
-    <div class="card">
-      <h2>Pipeline Overview</h2>
+    <!-- Overview -->
+    <section class="card">
+      <h2>Overview</h2>
+      <p>MPS (Miniscope Processing Suite) provides a complete GUI-driven pipeline for calcium imaging data:
+        motion correction, segmentation, temporal signal extraction, validation, and export. A Terminal window stays open during operation, showing real-time logs for transparency and debugging.</p>
+      <p class="muted" style="margin-top:6px">
+        Source: <a href="https://github.com/ariasarch/MPS_1.0.0" target="_blank" rel="noopener">github.com/ariasarch/MPS_1.0.0</a>
+      </p>
+    </section>
+
+    <!-- System Requirements -->
+    <section class="card">
+      <h2>System Requirements</h2>
+      <div class="two-col">
+        <div>
+          <h3>Windows</h3>
+          <ul>
+            <li>Windows 10/11 (64-bit)</li>
+            <li>16 GB RAM minimum (32 GB recommended)</li>
+            <li>~10 GB free disk during installation</li>
+            <li>Stable internet connection</li>
+            <li>Administrator privileges</li>
+          </ul>
+        </div>
+        <div>
+          <h3>macOS</h3>
+          <ul>
+            <li>macOS 12 (Monterey) or newer (Apple Silicon or Intel)</li>
+            <li>16 GB RAM minimum (32 GB recommended)</li>
+            <li>~10 GB free disk for first-run environment install</li>
+            <li>Internet connection for environment setup</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Installation Guides -->
+    <section class="card">
+      <h2>Quick Installation</h2>
+      <div class="two-col">
+        <div>
+          <h3>Windows</h3>
+          <ol>
+            <li>Download the installer:
+              <br><a href="https://github.com/ariasarch/MPS_1.0.0/releases/latest/download/MPS_Setup_v1.0.0.exe">MPS_Setup_v1.0.0.exe</a></li>
+            <li>Right-click the file → <em>Run as administrator</em>.</li>
+            <li>Follow prompts. Git and Conda will be installed if missing.</li>
+            <li>Package installation may take 15–20 minutes depending on network speed.</li>
+            <li>Launch MPS via the desktop shortcut.</li>
+          </ol>
+          <div class="warning"><strong>Note:</strong> Installation requires ~10 GB of disk space and a stable internet connection.</div>
+        </div>
+        <div>
+          <h3>macOS</h3>
+          <ol>
+            <li>Download the app:
+              <br>ZIP: <a href="https://github.com/ariasarch/MPS_1.0.0/releases/latest/download/MPS_Launcher_macOS_v1.0.0.zip">MPS_Launcher_macOS_v1.0.0.zip</a>
+              <br>DMG: <a href="https://github.com/ariasarch/MPS_1.0.0/releases/latest/download/MPS_Launcher_macOS_v1.0.0.dmg">MPS_Launcher_macOS_v1.0.0.dmg</a></li>
+            <li>ZIP: double-click to unzip → open <code>MPS Launcher.app</code>.
+                <br>DMG: open → drag <code>MPS Launcher.app</code> to <em>Applications</em> (or run in place).</li>
+            <li>On first open, if macOS prompts “downloaded from the internet,” click <strong>Open</strong>.</li>
+            <li>The app copies its payload to <code>~/Library/Application Support/MPS/</code>, creates/repairs a Conda env, and opens the GUI with live logs.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pipeline: detailed steps from your repo -->
+    <section class="card">
+      <h2>Pipeline: Step-by-Step</h2>
+      <p class="muted">The GUI orchestrates these modules; advanced users can run the Python files directly. The newest <code>GUI_PSS*.py</code> is auto-selected by the launcher.</p>
       <ol>
-        <li>Setup & Data Loading (<code>step1_setup.py</code>, <code>step2a_video_loading.py</code>)</li>
-        <li>Processing & Motion Estimation (<code>step2b_processing.py</code>, <code>step2c_motion_estimation.py</code>, <code>motion_correction.py</code>)</li>
-        <li>Erroneous Frames & Transform (<code>step2d_erroneous_frames.py</code>, <code>step2e_transformation.py</code>)</li>
-        <li>Validation & Cropping (<code>step2f_validation.py</code>, <code>step3a_cropping.py</code>)</li>
-        <li>SVD & Analysis (<code>step3b_svd.py</code>, <code>step3c_svd_analysis.py</code>)</li>
-        <li>Watershed & Segmentation (<code>step4a_watershed_search.py</code> … <code>step4g_temporal_merging.py</code>)</li>
-        <li>Noise Est., Validation Setup (<code>step5a_noise_estimation.py</code>, <code>step5b_validation_setup.py</code>)</li>
-        <li>YRA & Temporal Updates (<code>step6a_yra_computation.py</code>, <code>step6d_update_temporal.py</code> …)</li>
-        <li>Spatial Update & Merging Validation (<code>step7a_dilation.py</code> … <code>step7f_merging_validation.py</code>)</li>
-        <li>Final Updates & Save (<code>step8a_final_temporal_update.py</code> … <code>step8c_filter_and_save.py</code>)</li>
+        <li><strong>Setup & Loading</strong>
+          <ul>
+            <li><code>step1_setup.py</code> – initialize project & parameters</li>
+            <li><code>step2a_video_loading.py</code> – load raw miniscope videos</li>
+          </ul>
+        </li>
+        <li><strong>Pre-processing & Motion</strong>
+          <ul>
+            <li><code>step2b_processing.py</code> – initial processing</li>
+            <li><code>step2c_motion_estimation.py</code> – estimate motion fields</li>
+            <li><code>motion_correction.py</code> – apply motion correction</li>
+          </ul>
+        </li>
+        <li><strong>Quality & Transform</strong>
+          <ul>
+            <li><code>step2d_erroneous_frames.py</code> – handle bad frames</li>
+            <li><code>step2e_transformation.py</code> – spatial transforms</li>
+            <li><code>step2f_validation.py</code> – validate intermediate results</li>
+          </ul>
+        </li>
+        <li><strong>Cropping & SVD</strong>
+          <ul>
+            <li><code>step3a_cropping.py</code> – region of interest selection</li>
+            <li><code>step3b_svd.py</code> – compute SVD</li>
+            <li><code>step3c_svd_analysis.py</code> – analyze SVD components</li>
+          </ul>
+        </li>
+        <li><strong>Segmentation & Temporal Signals</strong>
+          <ul>
+            <li><code>step4a_watershed_search.py</code>, <code>step4b_watershed_segmentation.py</code> – candidate cell masks</li>
+            <li><code>step4c_merging_units.py</code> – merge related units</li>
+            <li><code>step4d_temporal_signals.py</code> – extract temporal traces</li>
+            <li><code>step4e_ac_initialization.py</code> – active component init</li>
+            <li><code>step4f_dropping_nans.py</code>, <code>step4g_temporal_merging.py</code> – cleanup & merge</li>
+          </ul>
+        </li>
+        <li><strong>Noise & Validation Setup</strong>
+          <ul>
+            <li><code>step5a_noise_estimation.py</code></li>
+            <li><code>step5b_validation_setup.py</code></li>
+          </ul>
+        </li>
+        <li><strong>YRA & Temporal Updates</strong>
+          <ul>
+            <li><code>step6a_yra_computation.py</code>, <code>step6b_validate_yra.py</code></li>
+            <li><code>step6c_parameter_suggestion.py</code>, <code>step6d_update_temporal.py</code>, <code>step6e_filter_validate.py</code></li>
+          </ul>
+        </li>
+        <li><strong>Spatial Update & Merging Validation</strong>
+          <ul>
+            <li><code>step7a_dilation.py</code>, <code>step7b_kdtree.py</code>, <code>step7c_bounds.py</code></li>
+            <li><code>step7d_parameter_suggestions.py</code>, <code>step7e_spatial_update.py</code>, <code>step7f_merging_validation.py</code></li>
+          </ul>
+        </li>
+        <li><strong>Finalization & Save</strong>
+          <ul>
+            <li><code>step8a_final_temporal_update.py</code>, <code>step8a_yra_computation.py</code>, <code>step8b_final_temporal_update.py</code></li>
+            <li><code>step8c_filter_and_save.py</code> – export results (Zarr / NumPy / JSON / Pickle)</li>
+          </ul>
+        </li>
       </ol>
-    </div>
+    </section>
 
-    <div class="card">
-      <h2>Parameters & Files</h2>
+    <!-- Parameters & Files -->
+    <section class="card">
+      <h2>Parameters, Utilities & GUI</h2>
       <ul>
-        <li>Global parameters: <code>general_processing_parameters.json</code></li>
-        <li>Parameter storage helpers: <code>parameter_storage.py</code></li>
-        <li>Utilities & plotting: <code>utilities.py</code>, <code>plotting_functions.py</code></li>
-        <li>GUI entry: newest <code>GUI_PSS*.py</code> (auto-selected by the launcher)</li>
-        <li>Logs: created under <code>logs/</code> with timestamps</li>
+        <li><strong>Global parameters:</strong> <code>general_processing_parameters.json</code> (and backup “Copy”)</li>
+        <li><strong>Parameter storage helpers:</strong> <code>parameter_storage.py</code></li>
+        <li><strong>Utilities & plotting:</strong> <code>utilities.py</code>, <code>plotting_functions.py</code></li>
+        <li><strong>GUI runner:</strong> newest <code>GUI_PSS*.py</code> (auto-selected by the launcher)</li>
+        <li><strong>Data explorer & helpers:</strong> <code>data_explorer.py</code>, <code>line_splitting.py</code>, <code>temporal_update_functions.py</code>, <code>spatial_update_utils.py</code>, <code>memory_logging_functions.py</code>, <code>pushover_notifier.py</code></li>
       </ul>
-    </div>
+    </section>
 
-    <div class="card">
-      <h2>Full Guides</h2>
+    <!-- Runtime & Logs -->
+    <section class="card">
+      <h2>Runtime Locations & Logs</h2>
       <ul>
-        <li><a href="https://github.com/ariasarch/MPS_1.0.0/blob/main/README.md" target="_blank" rel="noopener">README.md (overview & usage)</a></li>
-        <li><a href="https://github.com/ariasarch/MPS_1.0.0/blob/main/README_INSTALLER.md" target="_blank" rel="noopener">Windows installer guide</a></li>
+        <li><strong>macOS payload mirror:</strong> <code>~/Library/Application Support/MPS/</code></li>
+        <li><strong>Environment:</strong> <code>~/Library/Application Support/MPS/env/</code> (created/updated on first run)</li>
+        <li><strong>Logs:</strong> <code>~/Library/Application Support/MPS/logs/launcher_YYYY-MM-DD_HH-MM-SS.log</code></li>
       </ul>
-    </div>
-  </div>
+    </section>
+
+    <!-- Troubleshooting pulled from your original page -->
+    <section class="card">
+      <h2>Troubleshooting</h2>
+      <div class="two-col">
+        <div>
+          <h3>Windows</h3>
+          <ul>
+            <li><strong>SmartScreen block:</strong> Click <em>More info → Run anyway</em>.</li>
+            <li><strong>Git/Conda not found:</strong> The installer will prompt to install them.</li>
+            <li><strong>Install hangs:</strong> Package solving can take time—ensure stable internet.</li>
+            <li><strong>Won’t start:</strong> Re-run installer; check console output for errors.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>macOS</h3>
+          <ul>
+            <li><strong>Unidentified developer / “from the internet”:</strong> Right-click app → <em>Open</em> once (it’s signed & notarized).</li>
+            <li><strong>Conda missing:</strong> Accept Miniforge prompt and relaunch after install.</li>
+            <li><strong>First run slow:</strong> Environment solve can take several minutes; watch Terminal logs.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:10px">
+        For more, see <a href="support.html">Support</a> or open an issue on
+        <a href="https://github.com/ariasarch/MPS_1.0.0/issues" target="_blank" rel="noopener">GitHub Issues</a>.
+      </p>
+    </section>
+
+    <!-- Links to README files -->
+    <section class="card">
+      <h2>Full Guides & References</h2>
+      <ul>
+        <li><a href="https://github.com/ariasarch/MPS_1.0.0/blob/main/README.md" target="_blank" rel="noopener">README.md – Overview & usage</a></li>
+        <li><a href="https://github.com/ariasarch/MPS_1.0.0/blob/main/README_INSTALLER.md" target="_blank" rel="noopener">README_INSTALLER.md – Windows installer guide</a></li>
+      </ul>
+    </section>
+  </main>
 
   <div class="footer">
     <p>
@@ -98,6 +319,8 @@
       <a href="mac.html">macOS</a> •
       <a href="support.html">Support</a>
     </p>
+    <p>© 2024 MPS – Miniscope Processing Suite</p>
   </div>
+
 </body>
 </html>
