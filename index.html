@@ -1,172 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
   <title>MPS – Miniscope Processing Suite</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="neumaierlabdesign.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="neumaierlabdesign.png" sizes="192x192">
-  <link rel="apple-touch-icon" href="neumaierlabdesign.png">
-  <meta name="theme-color" content="#000000">
+  <!-- Favicon (tab icon) -->
+  <link rel="icon" type="image/png" href="neumaierlabdesign.png" />
+  <link rel="apple-touch-icon" href="neumaierlabdesign.png" />
+
+  <!-- Link preview -->
+  <meta property="og:title" content="MPS - Miniscope Processing Suite" />
+  <meta property="og:description" content="Professional calcium imaging analysis pipeline" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/ariasarch/MPS_Installer/main/neumaierlabdesign.png" />
+  <meta property="og:url" content="https://ariasarch.github.io/MPS_Installer/" />
+  <meta property="og:type" content="website" />
 
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
-      line-height:1.6; background:#fff; color:#111;
-    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter','Helvetica Neue',Arial,sans-serif}
+    body{background:#000;color:#fff;min-height:100vh;display:flex;flex-direction:column;align-items:center}
+    .container{max-width:1000px;width:100%;padding:20px}
+    .header{text-align:center;padding:60px 0 40px}
+    .logo-image{max-width:400px;width:100%;height:auto}
+    .tagline{font-size:24px;color:#a9a9a9;margin:20px 0 6px;font-weight:300}
+    .version-badge{display:inline-block;background:#2a2a2a;color:#ccc;padding:6px 16px;border-radius:20px;font-size:14px;margin-top:10px}
 
-    /* Nav / Brand */
-    .topbar { background:#fff; border-bottom:1px solid #e6e6e6; }
-    .topbar .nav {
-      max-width:1200px; margin:0 auto; padding:10px 16px;
-      display:flex; align-items:center; gap:16px;
-    }
-    .brand { display:flex; align-items:center; gap:10px; margin-right:auto; }
-    .brand img { width:36px; height:36px; object-fit:contain; border-radius:6px; }
-    .nav a { color:#000; text-decoration:none; padding:6px 10px; border-radius:6px; }
-    .nav a:hover { background:#000; color:#fff; }
+    /* top nav that matches your tab style */
+    .nav-tabs{display:flex;justify-content:center;gap:10px;margin:40px 0;border-bottom:2px solid #2a2a2a}
+    .nav-tab{padding:12px 24px;background:transparent;color:#a9a9a9;border:none;border-bottom:2px solid transparent;cursor:pointer;font-size:16px;font-weight:500;transition:.3s;margin-bottom:-2px;text-decoration:none;display:inline-block}
+    .nav-tab:hover{color:#fff;background:#1a1a1a}
+    .nav-tab.active{color:#fff;border-bottom-color:#fff}
 
-    /* Header */
-    .header { background:#000; color:#fff; padding:60px 20px; text-align:center; }
-    .header h1 { font-size:3em; font-weight:300; letter-spacing:-1px; margin-bottom:10px; }
-    .header p { opacity:.95; max-width:700px; margin:0 auto; }
+    .section{margin:60px 0}
+    .section-title{font-size:32px;margin-bottom:20px;color:#fff;position:relative;display:inline-block;font-weight:600}
+    .section-title:after{content:'';position:absolute;left:0;bottom:-8px;width:50px;height:3px;background:#444}
+    .section-content{font-size:18px;line-height:1.8;color:#ccc;margin-bottom:20px}
 
-    .container { max-width:1200px; margin:0 auto; padding:20px; }
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin:40px 0}
+    .feature{background:#1e1e1e;border-radius:12px;padding:30px;transition:.3s;border:1px solid #2a2a2a}
+    .feature:hover{transform:translateY(-5px);border-color:#444;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+    .feature-icon{font-size:36px;margin-bottom:20px}
+    .feature-title{font-size:22px;margin-bottom:12px;color:#fff;font-weight:600}
+    .feature-description{font-size:16px;color:#a9a9a9;line-height:1.6}
 
-    /* Download section */
-    .download-section {
-      background:#fff; padding:40px; border-radius:10px; border:1px solid #e6e6e6;
-      margin:-40px auto 40px; max-width:1000px; text-align:center;
-    }
-    .download-grid {
-      display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-      gap:24px; margin-top:16px; text-align:left;
-    }
-    .feature-card {
-      background:#fff; padding:30px; border-radius:10px; border:1px solid #e6e6e6;
-      transition:transform .2s;
-    }
-    .feature-card:hover { transform:translateY(-3px); }
-    .feature-card h3 { color:#000; margin-bottom:10px; font-size:1.2em; }
+    .cta-section{text-align:center;margin:60px 0;padding:40px;background:#1a1a1a;border-radius:16px;border:1px solid #2a2a2a}
+    .cta-title{font-size:32px;margin-bottom:10px;font-weight:600}
+    .cta-subtitle{font-size:18px;color:#a9a9a9;margin-bottom:24px}
+    .download-button{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(90deg,#3a3a3a,#4a4a4a);color:#fff;padding:16px 28px;border-radius:30px;font-size:18px;font-weight:600;text-decoration:none;transition:.3s;border:none;cursor:pointer}
+    .download-button:hover{background:linear-gradient(90deg,#4a4a4a,#5a5a5a);transform:translateY(-2px);box-shadow:0 10px 25px rgba(0,0,0,.5)}
+    .download-info{margin-top:10px;font-size:14px;color:#777}
 
-    .download-btn {
-      display:inline-block; background:#000; color:#fff; padding:14px 22px; border-radius:8px;
-      text-decoration:none; font-weight:600; margin:12px 0 4px;
-    }
-    .download-btn:hover { filter:brightness(.9); }
+    .code-block{background:#000;border:1px solid #2a2a2a;border-radius:8px;padding:20px;font-family:Consolas,Monaco,monospace;font-size:14px;color:#ccc;overflow-x:auto;margin:20px 0}
 
-    .version-info { color:#555; font-size:.9em; }
-
-    /* Other sections */
-    .cards {
-      display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:24px; margin:30px 0;
-    }
-    .requirements, .instructions {
-      background:#fff; padding:30px; border-radius:10px; border:1px solid #e6e6e6; margin:20px 0;
-      border-left:4px solid #000;
-    }
-
-    .warning { background:#f7f7f7; border:1px solid #e6e6e6; color:#000; padding:12px; border-radius:8px; margin-top:10px; }
-
-    .docs-section .links a { color:#000; text-decoration:none; }
-    .docs-section .links a:hover { text-decoration:underline; }
-
-    .footer { text-align:center; padding:40px 20px; color:#555; border-top:1px solid #e6e6e6; margin-top:40px; }
-    .footer a { color:#000; text-decoration:none; }
-    .footer a:hover { text-decoration:underline; }
+    footer{margin-top:auto;width:100%;background:#000;padding:30px 0;text-align:center;border-top:1px solid #2a2a2a}
+    .footer-content{max-width:1000px;margin:0 auto;padding:0 20px}
+    .footer-links{display:flex;justify-content:center;gap:30px;margin-bottom:20px;flex-wrap:wrap}
+    .footer-link{color:#a9a9a9;text-decoration:none;transition:color .2s}
+    .footer-link:hover{color:#fff}
+    .footer-text{font-size:14px;color:#666;margin-top:20px}
 
     @media (max-width:768px){
-      .header h1{font-size:2em;}
-      .download-section{padding:24px;}
+      .logo-image{max-width:300px}
+      .tagline{font-size:20px}
+      .cta-section{padding:28px}
     }
   </style>
 </head>
 <body>
-
-  <!-- Nav -->
-  <div class="topbar">
-    <div class="nav">
-      <div class="brand">
-        <img src="neumaierlabdesign.png" alt="MPS logo">
-        <a href="index.html"><strong>MPS</strong></a>
-      </div>
-      <a href="windows.html">Windows</a>
-      <a href="mac.html">macOS</a>
-      <a href="docs.html">Documentation</a>
-      <a href="support.html">Support</a>
-      <a href="https://github.com/ariasarch/MPS_1.0.0" target="_blank" rel="noopener">GitHub</a>
-    </div>
-  </div>
-
-  <!-- Hero -->
-  <div class="header">
-    <h1>MPS</h1>
-    <p>Miniscope Processing Suite – comprehensive calcium imaging analysis pipeline with a clean GUI.</p>
-  </div>
-
-  <!-- Content -->
   <div class="container">
-    <!-- Downloads -->
-    <div class="download-section">
-      <h2>Download</h2>
-      <p>Select your platform</p>
+    <header class="header">
+      <img src="neumaierlabdesign.png" alt="Neumaier Lab" class="logo-image" />
+      <p class="tagline">Miniscope Processing Suite</p>
+      <span class="version-badge">Version 1.0.0</span>
+    </header>
 
-      <div class="download-grid">
-        <!-- Windows -->
-        <div class="feature-card">
-          <h3>🪟 Windows</h3>
-          <p>One-click installer for Windows 10/11 (64-bit).</p>
-          <a class="download-btn" href="https://github.com/ariasarch/MPS_1.0.0/releases/latest/download/MPS_Setup_v1.0.0.exe">⬇ Download for Windows (.exe)</a>
-          <div class="version-info">Version 1.0.0 • Requires admin • ~10 GB temporary disk during setup</div>
-          <div class="warning"><strong>Tip:</strong> Right-click → <em>Run as administrator</em>.</div>
-          <p style="margin-top:10px"><a href="windows.html">Windows install guide →</a></p>
-        </div>
+    <nav class="nav-tabs">
+      <a class="nav-tab active" href="index.html">Overview</a>
+      <a class="nav-tab" href="docs.html">Documentation</a>
+      <a class="nav-tab" href="installation.html">Installation</a>
+      <a class="nav-tab" href="resources.html">Resources</a>
+    </nav>
 
-        <!-- macOS -->
-        <div class="feature-card">
-          <h3>🍎 macOS</h3>
-          <p>Signed & notarized launcher app (Apple Silicon & Intel).</p>
-          <a class="download-btn" href="https://github.com/ariasarch/MPS_1.0.0/releases/latest/download/MPS_Launcher_macOS_v1.0.0.zip">⬇ Download for macOS (ZIP)</a>
-          <div class="version-info">Prefer a disk image? <a href="https://github.com/ariasarch/MPS_1.0.0/releases/latest/download/MPS_Launcher_macOS_v1.0.0.dmg">Download DMG</a></div>
-          <div class="version-info">Version 1.0.0 • macOS 12+ recommended</div>
-          <div class="warning"><strong>First run:</strong> Double-click the app. If prompted, click <em>Open</em> (it’s signed & notarized).</div>
-          <p style="margin-top:10px"><a href="mac.html">macOS quick start →</a></p>
-        </div>
+    <section class="section">
+      <h2 class="section-title">🔬 Professional Calcium Imaging Analysis</h2>
+      <p class="section-content">
+        MPS is a comprehensive pipeline for processing miniscope calcium imaging data. From raw videos to publication-ready traces, MPS guides you through every step with an intuitive GUI and powerful algorithms.
+      </p>
+      <p class="section-content">
+        Built by neuroscientists for neuroscientists, MPS implements CNMF with modern initialization, watershed-based detection, multi-penalty LASSO spatial updates, and optimized temporal updates—scaling to large datasets.
+      </p>
+    </section>
+
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">🧠</div>
+        <h3 class="feature-title">Complete Pipeline</h3>
+        <p class="feature-description">Motion correction, segmentation, temporal extraction, QC, and export.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">⚡</div>
+        <h3 class="feature-title">Optimized Performance</h3>
+        <p class="feature-description">Dask-powered parallelism and memory-aware chunking.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">📊</div>
+        <h3 class="feature-title">Real-time Visualization</h3>
+        <p class="feature-description">Live previews and detailed terminal logs.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">💾</div>
+        <h3 class="feature-title">Flexible Export</h3>
+        <p class="feature-description">Zarr, NumPy, JSON, and Pickle for downstream analysis.</p>
       </div>
     </div>
 
-    <!-- Highlights -->
-    <div class="cards">
-      <div class="feature-card"><h3>🧠 Complete Pipeline</h3><p>From raw miniscope videos to analyzed neural activity: motion correction, segmentation, signal extraction, and more.</p></div>
-      <div class="feature-card"><h3>🖥️ User-Friendly GUI</h3><p>Step-by-step interface with live visualization and a debug terminal that stays open during processing.</p></div>
-      <div class="feature-card"><h3>⚡ Optimized Performance</h3><p>Dask-powered parallelism and memory-aware chunking for large datasets.</p></div>
-      <div class="feature-card"><h3>🔄 Reproducible Analysis</h3><p>Save/load parameter files. Export to Zarr, NumPy, JSON, and Pickle for downstream workflows.</p></div>
-    </div>
-
-    <!-- Docs callout -->
-    <div class="requirements docs-section">
-      <h2 style="margin-bottom:8px;">Documentation</h2>
-      <p>Start here for walkthroughs, parameter details, and pipeline steps.</p>
-      <div class="links" style="margin-top:10px;">
-        <p>• <a href="docs.html">Full MPS Documentation →</a></p>
-        <p>• <a href="https://github.com/ariasarch/MPS_1.0.0/blob/main/README.md" target="_blank" rel="noopener">GitHub README.md →</a></p>
-        <p>• <a href="https://github.com/ariasarch/MPS_1.0.0/blob/main/README_INSTALLER.md" target="_blank" rel="noopener">Windows installer guide →</a></p>
+    <div class="cta-section">
+      <h2 class="cta-title">Download</h2>
+      <p class="cta-subtitle">Signed macOS app and Windows installer</p>
+      <div>
+        <a class="download-button" style="margin-right:12px" href="https://github.com/ariasarch/MPS_Installer/releases/download/v1.0.0/MPS_Launcher_macOS_v1.0.0.zip">
+          <span>⬇</span><span>macOS (ZIP)</span>
+        </a>
+        <a class="download-button" style="margin-right:12px;background:linear-gradient(90deg,#454545,#595959)" href="https://github.com/ariasarch/MPS_Installer/releases/download/v1.0.0/MPS_Launcher_macOS_v1.0.0.dmg">
+          <span>⬇</span><span>macOS (DMG)</span>
+        </a>
+        <a class="download-button" href="https://github.com/ariasarch/MPS_Installer/releases/download/v1.0.0/MPS_Setup_v1.0.0.exe">
+          <span>⬇</span><span>Windows (EXE)</span>
+        </a>
       </div>
+      <p class="download-info">macOS 12+ • Windows 10/11 • First run sets up the environment and shows logs in Terminal/Console.</p>
     </div>
+
+    <section class="section">
+      <h2 class="section-title">Processing Pipeline (at a glance)</h2>
+      <div class="code-block">
+Raw Videos → Deglow + Denoise → Motion Correction → 
+NNDSVD Initialization → Watershed Segmentation → Spatial Merging → 
+Temporal Extraction → Noise Estimation → Temporal Update (CNMF) → 
+Spatial Update (LASSO) → Temporal Update (CNMF) → QC → Export
+      </div>
+    </section>
   </div>
 
-  <!-- Footer -->
-  <div class="footer">
-    <p>
-      <a href="https://github.com/ariasarch/MPS_1.0.0">GitHub Repository</a> •
-      <a href="https://github.com/ariasarch/MPS_1.0.0/issues">Report Issues</a> •
-      <a href="docs.html">Documentation</a>
-    </p>
-    <p>© 2024 MPS – Miniscope Processing Suite</p>
-  </div>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a class="footer-link" href="https://github.com/ariasarch/MPS_Installer">GitHub Repository</a>
+        <a class="footer-link" href="https://github.com/ariasarch/MPS_Installer/issues">Report Issues</a>
+        <a class="footer-link" href="docs.html">Documentation</a>
+        <a class="footer-link" href="resources.html">Community</a>
+      </div>
+      <p class="footer-text">© 2024 Neumaier Lab • MPS – Miniscope Processing Suite</p>
+    </div>
+  </footer>
 </body>
 </html>
