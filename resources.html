@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MPS – Resources</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="neumaierlabdesign.png" />
+  <link rel="apple-touch-icon" href="neumaierlabdesign.png" />
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter','Helvetica Neue',Arial,sans-serif}
+    body{background:#000;color:#fff;min-height:100vh;display:flex;flex-direction:column;align-items:center}
+    .container{max-width:1000px;width:100%;padding:20px}
+    .header{text-align:center;padding:40px 0 20px}
+    .logo-image{max-width:220px;width:100%;height:auto}
+    .nav-tabs{display:flex;justify-content:center;gap:10px;margin:20px 0 40px;border-bottom:2px solid #2a2a2a}
+    .nav-tab{padding:12px 24px;background:transparent;color:#a9a9a9;border:none;border-bottom:2px solid transparent;cursor:pointer;font-size:16px;font-weight:500;transition:.3s;margin-bottom:-2px;text-decoration:none;display:inline-block}
+    .nav-tab:hover{color:#fff;background:#1a1a1a}
+    .nav-tab.active{color:#fff;border-bottom-color:#fff}
+
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin:20px 0}
+    .feature{background:#1e1e1e;border-radius:12px;padding:30px;border:1px solid #2a2a2a;transition:.3s}
+    .feature:hover{transform:translateY(-5px);border-color:#444;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+    .feature-icon{font-size:36px;margin-bottom:20px}
+    .feature-title{font-size:22px;margin-bottom:12px;color:#fff;font-weight:600}
+    .feature-description{font-size:16px;color:#a9a9a9;line-height:1.6}
+    .footer-link{color:#4a9eff;text-decoration:none}
+    .footer-link:hover{text-decoration:underline;color:#6ab7ff}
+
+    .section{margin:30px 0}
+    .section-title{font-size:28px;margin-bottom:16px;font-weight:600;position:relative;display:inline-block}
+    .section-title:after{content:'';position:absolute;left:0;bottom:-8px;width:50px;height:3px;background:#444}
+
+    footer{margin-top:auto;width:100%;background:#000;padding:30px 0;text-align:center;border-top:1px solid #2a2a2a}
+    .footer-content{max-width:1000px;margin:0 auto;padding:0 20px}
+    .footer-links{display:flex;justify-content:center;gap:30px;margin-bottom:20px;flex-wrap:wrap}
+    .footlink{color:#a9a9a9;text-decoration:none}
+    .footlink:hover{color:#fff}
+    .footer-text{font-size:14px;color:#666;margin-top:20px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <img src="neumaierlabdesign.png" alt="MPS" class="logo-image" />
+    </header>
+
+    <nav class="nav-tabs">
+      <a class="nav-tab" href="index.html">Overview</a>
+      <a class="nav-tab" href="docs.html">Documentation</a>
+      <a class="nav-tab" href="installation.html">Installation</a>
+      <a class="nav-tab active" href="resources.html">Resources</a>
+    </nav>
+
+    <section class="section">
+      <h2 class="section-title">🔗 Helpful Resources</h2>
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">💻</div>
+          <h3 class="feature-title">Source Code</h3>
+          <p class="feature-description">Access the complete MPS source code or customize for your lab.</p>
+          <a href="https://github.com/ariasarch/MPS_Installer" class="footer-link">View on GitHub →</a>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">🐞</div>
+          <h3 class="feature-title">Issue Tracker</h3>
+          <p class="feature-description">Report bugs, request features, and follow progress.</p>
+          <a href="https://github.com/ariasarch/MPS_Installer/issues" class="footer-link">Report an Issue →</a>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">💬</div>
+          <h3 class="feature-title">Support / Discussions</h3>
+          <p class="feature-description">Ask questions and share tips with other users.</p>
+          <a href="https://github.com/ariasarch/MPS_Installer/discussions" class="footer-link">Community Support →</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a class="footlink" href="index.html">Home</a>
+        <a class="footlink" href="docs.html">Documentation</a>
+        <a class="footlink" href="installation.html">Installation</a>
+      </div>
+      <p class="footer-text">© 2024 Neumaier Lab • MPS – Miniscope Processing Suite</p>
+    </div>
+  </footer>
+</body>
+</html>
