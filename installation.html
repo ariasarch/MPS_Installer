@@ -75,6 +75,23 @@
       After this, close and reopen all terminals, then proceed with the MPS installer.
     </div>
 
+    <!-- Optional: Install Mamba for Faster Setup -->
+    <div class="warning-box" style="margin-top:0; margin-bottom:30px;">
+      <strong>Optional (Recommended):</strong> Install <strong>Mamba</strong> to significantly speed up the environment setup process.<br><br>
+    
+      Mamba is a fast drop-in replacement for Conda and can shorten the initial MPS installation by several minutes.<br><br>
+    
+      To install Mamba into your <code>base</code> environment, open the Anaconda Prompt on Windows  
+      (or Terminal on macOS) and run:
+    
+      <pre style="background:#1a1a1a; padding:14px; border-radius:6px; border:1px solid #333; margin-top:12px; font-size:15px; line-height:1.5; overflow-x:auto;">
+    conda install -n base -c conda-forge mamba
+      </pre>
+    
+      After installation, <code>mamba</code> will automatically speed up environment creation during the MPS setup.<br>
+      (This step is optional — MPS will still work without it.)
+    </div>
+
 
     <div class="cta-section">
       <h2 class="cta-title">Download MPS</h2>
