@@ -36,6 +36,17 @@
     .footlink{color:#a9a9a9;text-decoration:none}
     .footlink:hover{color:#fff}
     .footer-text{font-size:14px;color:#666;margin-top:20px}
+
+    /* FAQ */
+    .faq{margin-top:30px}
+    .faq-item{background:#1e1e1e;border:1px solid #2a2a2a;border-radius:12px;padding:18px 20px;margin-bottom:14px}
+    .faq-item summary{cursor:pointer;font-size:18px;font-weight:600;color:#fff;list-style:none}
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item p{margin-top:12px;color:#a9a9a9;line-height:1.7;font-size:15px}
+    .faq-item a{color:#4a9eff;text-decoration:none}
+    .faq-item a:hover{text-decoration:underline;color:#6ab7ff}
+    .faq-meta{color:#666;font-size:13px;margin-top:10px}
+
   </style>
 </head>
 <body>
@@ -68,6 +79,134 @@
           <a href="https://github.com/ariasarch/MPS_Installer/issues" class="footer-link">Report an Issue →</a>
         </div>
       </div>
+
+      <div class="faq">
+        <h3 class="feature-title" style="margin:10px 0 14px">FAQ: Walkthrough + Troubleshooting (Jan 2)</h3>
+      
+        <details class="faq-item">
+          <summary>Can I automate MPS across steps without using an API?</summary>
+          <p>
+            Yes. Use the <strong>Automation</strong> tab, load a parameter file, then toggle <strong>Auto Run</strong> to run the pipeline steps for a session.
+            This covers most “API-like” needs for now.
+          </p>
+        </details>
+      
+        <details class="faq-item">
+          <summary>Why isn’t there a recommended “run everything for all sessions” button?</summary>
+          <p>
+            Session-to-session variability is real. Even within the same animal, different sessions can need different parameter “loving care.”
+            Bulk processing is possible, but it can silently bake in mistakes, so the default workflow prioritizes per-session validation.
+            <span class="faq-meta">Spanish practice: “cuidado” means care.</span>
+          </p>
+        </details>
+      
+        <details class="faq-item">
+          <summary>Step 2 (Background init / noise): what “good” looks like</summary>
+          <p>
+            The key sanity check is the red trace: it should be relatively flat. If you see big spikes or parabola-like artifacts, adjust background/noise parameters.
+          </p>
+        </details>
+      
+        <details class="faq-item">
+          <summary>Denoising: how do I validate it?</summary>
+          <p>
+            There is no single perfect visual check. For now, treat denoising as a standard preprocessing step.
+            If your pipeline produces weird “glow removal” artifacts, it is usually fixable via parameter tuning and more conservative recording brightness (see below).
+          </p>
+        </details>
+      
+        <details class="faq-item">
+          <summary>Motion correction: what should I look for?</summary>
+          <p>
+            Check the motion summary plots and the distribution. If motion is small and stable (no “crazy” jumps), your surgery and recording stability are likely good.
+            Line-splitting artifacts often show up here; the pipeline is designed to remove many of those.
+          </p>
+        </details>
+      
+        <details class="faq-item">
+          <summary>NNDSVD inspection: what should the singular values look like?</summary>
+          <p>
+            You want a smooth decay curve, not a spiky pattern. Component 0 is typically background and should be much larger than others.
+            Early components should capture most visible structure; later components capture small variations that add up downstream.
+          </p>
+        </details>
+      
+        <details class="faq-item">
+          <summary>Why do I see thousands of components? Is that “wrong”?</summary>
+          <p>
+            Not automatically. It often means parameters are too permissive early (especially minimum component size). It is easier to remove extra components later than recover missed ones,
+            but thousands can slow later steps. Increase <strong>minimum component size</strong> and related pruning thresholds to reduce tiny “dot” components.
+          </p>
+        </details>
+      
+        <details class="faq-item">
+          <summary>Merge thresholds: what do temporal correlation and spatial overlap mean?</summary>
+          <p>
+            Both are 0 to 1 thresholds. Increasing them makes merges stricter. If you want cleaner separation, raise the overlap threshold (example: 0.9 instead of ~0.5),
+            and increase temporal correlation only if your expected cell size and imaging resolution support it.
+          </p>
+        </details>
+      
+        <details class="faq-item">
+          <summary>AR order (1 vs 2): how do I choose?</summary>
+          <p>
+            AR=1 favors simple calcium-like dynamics. AR=2 can capture tighter timing structure, but may admit more noise artifacts.
+            If you are seeing too many fast, noise-like events, AR=1 can help. If you expect very fast dynamics, AR=2 may be justified.
+          </p>
+        </details>
+      
+        <details class="faq-item">
+          <summary>What parameters matter most when signals look “too oscillatory” or too noisy?</summary>
+          <p>
+            Start with: <strong>zero threshold</strong> (raise it if you have too many tiny components),
+            <strong>sparse penalty</strong> (increase to discourage diffuse/global signals),
+            and basic pruning thresholds like minimum spike std, minimum calcium variance, and minimum spatial std.
+            Don’t over-optimize early rounds; later QC filters exist.
+          </p>
+        </details>
+      
+        <details class="faq-item">
+          <summary>What are the best recording conditions (brightness)?</summary>
+          <p>
+            Aim for “as dim as possible while still seeing cells,” similar to a game brightness slider where you keep it just barely visible.
+            Overly bright recordings can increase autofluorescent background and swamp real signals.
+          </p>
+        </details>
+      
+        <details class="faq-item">
+          <summary>Global fluorescence / “whole-field firing”: can MPS remove it?</summary>
+          <p>
+            Sometimes. Global signals can leak into temporal components when the model is allowed to explain too much shared variance.
+            Options include: tightening sparsity, using AR=1 in cases where AR=2 is admitting fast artifacts, and applying post hoc frequency-based filtering if the pattern is clearly periodic.
+          </p>
+        </details>
+      
+        <details class="faq-item">
+          <summary>1p vs 2p: how do background removal and denoising relate?</summary>
+          <p>
+            In this pipeline, background removal is implemented via deglow plus denoising steps (conceptually similar to other 1p pipelines).
+            More customization and better visualization for early steps is planned, but you can always inspect the implementation directly in the source.
+          </p>
+        </details>
+      
+        <details class="faq-item">
+          <summary>Should we use machine learning segmentation instead of CNMF?</summary>
+          <p>
+            CNMF remains a strong “gold standard” for many 1p use cases. ML methods can work well but often require training data matched to your lens, expression, and brain region.
+            They can also miss rare but meaningful signals due to long-tail generalization issues. If you need maximum interpretability, CNMF-style pipelines still win for many labs.
+          </p>
+        </details>
+      
+        <details class="faq-item">
+          <summary>Where should I report bugs or ask questions?</summary>
+          <p>
+            Use the GitHub Issue Tracker linked above:
+            <a href="https://github.com/ariasarch/MPS_1.0.0/issues">https://github.com/ariasarch/MPS_1.0.0/issues</a>.
+            Reporting publicly helps others and makes fixes easier to track.
+          </p>
+        </details>
+      </div>
+      
     </section>
   </div>
 
