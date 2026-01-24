@@ -112,6 +112,38 @@
     .footer-link:hover{color:#fff}
     .footer-text{font-size:14px;color:#666;margin-top:20px}
 
+    .preprint-badge{
+      display:inline-block;
+      margin-top:14px;
+      padding:8px 18px;
+      border-radius:999px;
+      background:#1e1e1e;
+      color:#fff;
+      font-size:14px;
+      font-weight:500;
+      text-decoration:none;
+      border:1px solid #3a3a3a;
+      animation:pulseGlow 2.5s ease-in-out infinite;
+    }
+    
+    .preprint-badge:hover{
+      background:#262626;
+      border-color:#5a5a5a;
+    }
+    
+    @keyframes pulseGlow{
+      0%{
+        box-shadow:0 0 0 0 rgba(255,255,255,0.25);
+      }
+      70%{
+        box-shadow:0 0 0 10px rgba(255,255,255,0);
+      }
+      100%{
+        box-shadow:0 0 0 0 rgba(255,255,255,0);
+      }
+    }
+
+
     @media (max-width:768px){
       .logo-image{max-width:300px}
       .tagline{font-size:20px}
@@ -125,6 +157,13 @@
       <img src="neumaierlabdesign.png" alt="Neumaier Lab" class="logo-image" />
       <p class="tagline">Miniscope Processing Suite</p>
       <span class="version-badge">Version 1.0.0</span>
+      <a
+        href="https://www.biorxiv.org/content/10.64898/2025.12.01.691517v1"
+        target="_blank"
+        class="preprint-badge"
+      >
+        📄 Preprint out here
+      </a>
     </header>
 
     <nav class="nav-tabs">
