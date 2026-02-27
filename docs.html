@@ -24,23 +24,64 @@
     .doc-toc{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:30px;margin:30px 0}
     .doc-toc h3{color:#fff;margin-bottom:20px;font-size:24px}
     .doc-toc ul{list-style:none;padding-left:0}
-    .doc-toc li{padding:8px 0}
+    .doc-toc > ul > li{padding:6px 0}
+    .doc-toc > ul > li > ul{padding-left:20px;margin-top:4px}
+    .doc-toc > ul > li > ul > li{padding:4px 0}
     .doc-toc a{color:#4a9eff;text-decoration:none}
     .doc-toc a:hover{text-decoration:underline;color:#6ab7ff}
 
     .doc-section{margin:40px 0;padding:30px;background:#1a1a1a;border-radius:12px;border:1px solid #2a2a2a}
     .doc-section h3{color:#fff;font-size:28px;margin-bottom:20px;font-weight:600}
-    .doc-section h4{color:#fff;font-size:22px;margin:30px 0 15px;font-weight:600}
-    .doc-section h5{color:#fff;font-size:18px;margin:20px 0 10px;font-weight:600}
+    .doc-section h4{color:#fff;font-size:22px;margin:30px 0 15px;font-weight:600;border-bottom:1px solid #2a2a2a;padding-bottom:8px}
+    .doc-section h5{color:#ccc;font-size:17px;margin:22px 0 10px;font-weight:600}
     .doc-section p{color:#ccc;line-height:1.8;margin-bottom:15px}
-    .doc-section ul,.doc-section ol{color:#ccc;line-height:1.8;margin:15px 0;padding-left:30px}
-    .doc-section li{margin:8px 0}
+    .doc-section ul,.doc-section ol{color:#ccc;line-height:1.8;margin:12px 0;padding-left:28px}
+    .doc-section li{margin:6px 0}
+    .doc-section strong{color:#fff}
+    .doc-section code{background:#0d0d0d;border:1px solid #333;border-radius:4px;padding:2px 6px;font-family:Consolas,Monaco,monospace;font-size:13px;color:#7dd3fc}
 
-    .parameter-box{background:#0a0a0a;border:1px solid #333;border-radius:8px;padding:20px;margin:15px 0}
+    .parameter-box{background:#0d0d0d;border:1px solid #2a2a2a;border-radius:10px;padding:24px;margin:20px 0}
+    .parameter-box h4{color:#fff;font-size:20px;margin-bottom:14px;font-weight:600;border-bottom:1px solid #2a2a2a;padding-bottom:8px}
+    .parameter-box h5{color:#a9a9a9;font-size:15px;margin:16px 0 8px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+    .parameter-box p{color:#ccc;line-height:1.8;margin-bottom:10px}
+    .parameter-box ul,.parameter-box ol{color:#ccc;line-height:1.8;margin:8px 0;padding-left:24px}
+    .parameter-box li{margin:5px 0}
     .parameter-box strong{color:#4a9eff}
-    .tip-box{background:#1a2a1a;border:1px solid #2a4a2a;border-left:4px solid #4a9eff;padding:20px;margin:20px 0;border-radius:8px}
-    .code-block{background:#000;border:1px solid #2a2a2a;border-radius:8px;padding:20px;font-family:Consolas,Monaco,monospace;font-size:14px;color:#ccc;overflow-x:auto;margin:20px 0}
-    .warning-box{background:#2a2a2a;border:1px solid #444;color:#f0f0f0;padding:20px;border-radius:8px;margin:20px auto;max-width:820px}
+    .parameter-box code{background:#000;border:1px solid #333;border-radius:4px;padding:2px 6px;font-family:Consolas,Monaco,monospace;font-size:13px;color:#7dd3fc}
+
+    .tip-box{background:#0d1a0d;border:1px solid #1a3a1a;border-left:4px solid #4a9eff;padding:18px 20px;margin:16px 0;border-radius:0 8px 8px 0}
+    .tip-box p{color:#b0c4b0;line-height:1.8;margin:0}
+    .tip-box strong{color:#7dd3fc}
+    .tip-box code{background:#000;border:1px solid #333;border-radius:4px;padding:2px 6px;font-family:Consolas,Monaco,monospace;font-size:13px;color:#7dd3fc}
+
+    .warning-box{background:#1a1a0d;border:1px solid #3a3a1a;border-left:4px solid #f59e0b;padding:18px 20px;margin:16px 0;border-radius:0 8px 8px 0}
+    .warning-box p{color:#c4b87a;line-height:1.8;margin:0}
+    .warning-box strong{color:#fbbf24}
+
+    .bug-box{background:#1a0d0d;border:1px solid #3a1a1a;border-left:4px solid #f87171;padding:18px 20px;margin:16px 0;border-radius:0 8px 8px 0}
+    .bug-box p{color:#c4a0a0;line-height:1.8;margin:0}
+    .bug-box strong{color:#f87171}
+    .bug-box code{background:#000;border:1px solid #333;border-radius:4px;padding:2px 6px;font-family:Consolas,Monaco,monospace;font-size:13px;color:#7dd3fc}
+
+    .code-block{background:#000;border:1px solid #2a2a2a;border-radius:8px;padding:20px;font-family:Consolas,Monaco,monospace;font-size:13px;color:#a0c4a0;overflow-x:auto;margin:16px 0;line-height:1.6}
+
+    .step-badge{display:inline-block;background:#1a2a3a;border:1px solid #2a4a6a;color:#4a9eff;font-size:12px;font-weight:700;padding:3px 10px;border-radius:12px;margin-right:8px;letter-spacing:.04em;text-transform:uppercase}
+
+    .output-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+    .output-item{background:#0d0d0d;border:1px solid #2a2a2a;border-radius:8px;padding:14px}
+    .output-item strong{color:#4a9eff;display:block;margin-bottom:4px;font-size:14px}
+    .output-item span{color:#999;font-size:13px}
+    @media(max-width:600px){.output-grid{grid-template-columns:1fr}}
+
+    .issues-grid{display:grid;gap:16px;margin:16px 0}
+    .issue-card{background:#0d0d0d;border:1px solid #2a2a2a;border-radius:8px;padding:18px}
+    .issue-card h5{color:#f87171;font-size:15px;margin-bottom:10px;font-weight:600}
+    .issue-card ul{color:#999;padding-left:20px;line-height:1.8}
+    .issue-card li{margin:4px 0}
+
+    .philosophy-block{background:#0a0a14;border:1px solid #1a1a3a;border-radius:10px;padding:24px;margin:16px 0}
+    .philosophy-block h5{color:#818cf8;font-size:16px;margin-bottom:10px;font-weight:600}
+    .philosophy-block p{color:#b0b0cc;line-height:1.8;margin:0}
 
     footer{margin-top:auto;width:100%;background:#000;padding:30px 0;text-align:center;border-top:1px solid #2a2a2a}
     .footer-content{max-width:1000px;margin:0 auto;padding:0 20px}
@@ -63,209 +104,583 @@
       <a class="nav-tab" href="resources.html">Resources</a>
     </nav>
 
-    <!-- ===== Your long documentation (unchanged content, formatted) ===== -->
     <section class="section">
       <h2 class="section-title">📚 Miniscope Processing Pipeline Guide</h2>
 
       <div class="doc-container">
         <h3>Overview</h3>
-        <p>This guide walks through the complete miniscope calcium imaging processing pipeline.</p>
+        <p>This guide walks through the complete miniscope calcium imaging processing pipeline — from raw video to clean, separated neural signals ready for downstream analysis.</p>
 
-        <h3>Quick Start</h3>
-        <ol>
-          <li><strong>Initial Setup</strong>
-            <ul>
-              <li>Install and launch MPS (Windows installer or macOS app)</li>
-            </ul>
-          </li>
-          <li><strong>Loading Data</strong>
-            <ul>
-              <li><strong>New Analysis</strong>: Start at Step 1 (Project Configuration)</li>
-              <li><strong>Existing Analysis</strong>:
-                <ul>
-                  <li>File → Load parameters file</li>
-                  <li>Load previous data and choose the step to resume</li>
-                  <li>Automation → Toggle / Run (all or from current)</li>
-                </ul>
-              </li>
-            </ul>
-          </li>
+        <h3 style="margin-top:30px">Quick Start</h3>
+        <ol style="color:#ccc;line-height:2;padding-left:24px;margin-top:12px">
+          <li><strong style="color:#fff">Initial Setup</strong> — Launch MPS from the installer-created shortcut (Windows) or app bundle (macOS).</li>
+          <li><strong style="color:#fff">New Analysis</strong> — Start at Step 1: Project Configuration.</li>
+          <li><strong style="color:#fff">Existing Analysis</strong> — File → Load parameters file, then Data → Load previous data, choose the step to resume, and use Automation → Run All Steps or Run From Current Step.</li>
         </ol>
 
-        <div class="warning-box" style="margin-top:30px">
-          <strong>License:</strong> Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at <a href="http://www.apache.org/licenses/LICENSE-2.0" style="color:#4a9eff;text-decoration:none">http://www.apache.org/licenses/LICENSE-2.0</a>
+        <div style="background:#1a1a0d;border:1px solid #3a3a1a;border-left:4px solid #f59e0b;padding:18px 20px;margin:24px 0;border-radius:0 8px 8px 0">
+          <p style="color:#c4b87a;margin:0"><strong style="color:#fbbf24">License:</strong> Licensed under the Apache License, Version 2.0. You may obtain a copy at <a href="http://www.apache.org/licenses/LICENSE-2.0" style="color:#4a9eff">http://www.apache.org/licenses/LICENSE-2.0</a></p>
         </div>
       </div>
 
       <div class="doc-toc">
         <h3>Table of Contents</h3>
         <ul>
-          <li><a href="#getting-started">Getting Started</a></li>
-          <li><a href="#pipeline-steps">Pipeline Steps</a></li>
-          <li><a href="#tips">Tips and Best Practices</a></li>
-          <li><a href="#issues">Common Issues and Solutions</a></li>
+          <li><a href="#pipeline-steps">Pipeline Steps</a>
+            <ul>
+              <li><a href="#step-1">Step 1: Project Configuration</a></li>
+              <li><a href="#step-2">Step 2: Data Preprocessing</a></li>
+              <li><a href="#step-3">Step 3: Spatial Cropping &amp; Initialization</a></li>
+              <li><a href="#step-4">Step 4: Component Detection</a></li>
+              <li><a href="#step-5">Step 5: CNMF Preparation</a></li>
+              <li><a href="#step-6">Step 6: CNMF Processing</a></li>
+              <li><a href="#step-7">Step 7: Spatial Refinement</a></li>
+              <li><a href="#step-8">Step 8: Final Processing &amp; Export</a></li>
+            </ul>
+          </li>
+          <li><a href="#tuning">Parameter Tuning Philosophy</a></li>
+          <li><a href="#tips">Tips &amp; Best Practices</a></li>
+          <li><a href="#issues">Common Issues &amp; Solutions</a></li>
           <li><a href="#interpreting">Interpreting Your Results</a></li>
           <li><a href="#advanced">Advanced Features</a></li>
+          <li><a href="#system">System Requirements</a></li>
         </ul>
       </div>
 
-      <div id="getting-started" class="doc-section">
-        <h3>Getting Started</h3>
-        <h4>Initial Setup</h4>
-        <p>Launch MPS from the installer-created shortcut (Windows) or the app bundle (macOS).</p>
-        <h4>Load Data</h4>
-        <ul>
-          <li>File → Load parameters file (optional)</li>
-          <li>Enable automation to run multi-step pipelines unattended</li>
-          <li>Resume from previous cache by selecting the directory and target step</li>
-        </ul>
-      </div>
-
-      <!-- === Huge steps content preserved from your original === -->
-      <!-- For brevity here, the following sections include the same text you provided. -->
+      <!-- ===== PIPELINE STEPS ===== -->
       <div id="pipeline-steps" class="doc-section">
         <h3>Pipeline Steps</h3>
 
+        <!-- STEP 1 -->
         <div id="step-1" class="parameter-box">
-          <h4>Step 1: Project Configuration</h4>
+          <h4><span class="step-badge">Step 1</span> Project Configuration</h4>
           <p><strong>Required inputs:</strong></p>
           <ul>
-            <li>Animal ID</li><li>Session ID</li><li>Input directory</li><li>Output directory</li>
+            <li><strong>Animal ID</strong> — numeric identifier for the animal</li>
+            <li><strong>Session ID</strong></li>
+            <li><strong>Input directory</strong> — folder containing your video files</li>
+            <li><strong>Output directory</strong> — where results will be saved</li>
           </ul>
-          <p><strong>Advanced:</strong> Dask workers (8), memory limits, % of video for tests.</p>
+          <p style="margin-top:12px"><strong>Advanced (Dask) Settings:</strong> 8 workers, 200 GB memory limit, 100% video percentage by default. Reduce video percentage for testing.</p>
+          <div class="warning-box">
+            <p><strong>Note:</strong> Animal ID currently only accepts numeric values due to how naming conventions propagate through the pipeline. This is a known limitation and may be addressed in a future update.</p>
+          </div>
         </div>
 
+        <!-- STEP 2 -->
         <div id="step-2" class="parameter-box">
-          <h4>Step 2: Data Preprocessing</h4>
+          <h4><span class="step-badge">Step 2</span> Data Preprocessing</h4>
 
-          <h5>2a: File Pattern Recognition</h5>
+          <h5>2a · File Pattern Recognition</h5>
           <ul>
-            <li>Regex for your video files (.avi default works)</li>
-            <li>Use an LLM to draft regex from an example path</li>
+            <li>Use regex to match your video files — the <code>.avi</code> pattern is pre-set.</li>
+            <li>Tip: paste an example file path into an LLM and it will generate the correct regex.</li>
+            <li>Downsampling is optional if your machine has sufficient resources.</li>
+            <li>Line splitting detection is optional — see <a href="#advanced" style="color:#4a9eff">Advanced Features</a>.</li>
           </ul>
 
-          <h5>2b: Background Removal & Denoising</h5>
-          <p><strong>Denoising:</strong> Median, Gaussian, Bilateral, Anisotropic (trade speed/edges).</p>
-          <p><strong>Background:</strong> Tophat (robust), Uniform (fast/simple).</p>
-
-          <h5>2c: Motion Correction</h5>
+          <h5>2b · Background Removal &amp; Denoising</h5>
+          <p><strong>Denoising methods:</strong></p>
           <ul>
-            <li>"frame" mode; expect high RAM usage</li>
-            <li>Recursive phase correlation</li>
+            <li><strong>Median</strong> — best for salt-and-pepper noise, preserves edges well. General-purpose default.</li>
+            <li><strong>Gaussian</strong> — smooth uniform blur; good when you need everything smooth but can lose sharp detail.</li>
+            <li><strong>Bilateral</strong> — edge-preserving blur; slower but keeps neuron boundaries sharp.</li>
+            <li><strong>Anisotropic</strong> — directional smoothing that follows structure shape; great for elongated neurons but slowest.</li>
+          </ul>
+          <p><strong>Background removal methods:</strong></p>
+          <ul>
+            <li><strong>Tophat</strong> — subtracts a morphologically opened version of the image. Robust and works well for most data.</li>
+            <li><strong>Uniform</strong> — rolling average subtraction; faster, best when background changes are smooth and gradual.</li>
           </ul>
 
-          <h5>2d: Quality Control</h5>
-          <ul><li>Threshold factor: SDs above mean to drop frames</li></ul>
+          <h5>2c · Motion Correction</h5>
+          <ul>
+            <li>Keep motion estimation on <strong>"frame"</strong> (default).</li>
+            <li>This is one of the longer steps — expect ~3× your video size in RAM. For very large datasets, Step 7e may take comparable or longer time.</li>
+            <li>Algorithm uses recursive estimation with phase correlation.</li>
+          </ul>
 
-          <h5>2e: Data Validation</h5>
-          <ul><li>Keep fill=0; validate transformed data</li></ul>
+          <h5>2d · Quality Control</h5>
+          <ul>
+            <li><strong>Threshold factor</strong>: how many standard deviations above the mean motion must be before a frame is dropped.</li>
+          </ul>
 
-          <h5>2f: Preview Results</h5>
-          <ul><li>Subset check; saves only stats</li></ul>
+          <h5>2e · Data Validation</h5>
+          <ul>
+            <li>Keep fill value as zero (for NaNs). Keep all other options checked. Validates transformed data integrity.</li>
+          </ul>
+
+          <h5>2f · Preview Results</h5>
+          <ul>
+            <li>Processes a subset of data — saves only statistics, not full output. Use as a gut-check before committing to the full run.</li>
+          </ul>
         </div>
 
+        <!-- STEP 3 -->
         <div id="step-3" class="parameter-box">
-          <h4>Step 3: Spatial Cropping & Initialization</h4>
-          <h5>3a: ROI</h5>
+          <h4><span class="step-badge">Step 3</span> Spatial Cropping &amp; Initialization</h4>
+
+          <h5>3a · Define ROI</h5>
           <ul>
-            <li>Keep crop tight; test on 10% data first</li>
+            <li><strong>Keep the crop as tight as possible</strong> — this directly impacts processing speed throughout the pipeline.</li>
+            <li>Test on 10% of the video first, then return with the full video.</li>
+            <li>Use a circular crop centered on your imaging field. Adjust offset if the field is not centered.</li>
           </ul>
-          <h5>3b: NNDSVD Initialization</h5>
+          <div class="tip-box">
+            <p><strong>Tip:</strong> After cropping, MPS saves data as a Zarr file. The image shown during cropping is roughly the mean pixel brightness across frames. If you need a static 2D image of the cropped field for presentations, you can export one from the Zarr output with a short Python snippet (load the array, save the mean frame as a JPEG).</p>
+          </div>
+
+          <h5>3b · NNDSVD Initialization</h5>
+          <p>Think of NNDSVD like a conductor listening to an orchestra warm up — instead of isolating each instrument one by one, it instantly identifies the major sections from the combined sound. NNDSVD does the same: it decomposes the full video into a compact set of spatial components rapidly, giving the CNMF a strong starting point.</p>
+          <p><strong>What it's actually doing:</strong> Non-Negative Double Singular Value Decomposition — a fast matrix factorization that expresses your video as a product of three simpler matrices. Unlike PCA, SVD reaches a near-equivalent answer much faster on large datasets. The NN ("non-negative") constraint adds the biological prior that fluorescence can't be negative, encouraging spatially compact, blob-like components.</p>
+          <p><strong>Parameters:</strong></p>
           <ul>
-            <li>Components, power iters, sparsity, reg, chunk size</li>
+            <li><strong>Number of components</strong> — Component zero typically captures background variation (the first singular vector reflects the dominant variance, which in miniscope recordings is usually neuropil/background fluorescence). Components 1+ are candidate neural signals, ordered roughly by variance explained. Even 20–50 components typically capture 99%+ of variance in a sparse brain region.</li>
+            <li><strong>Power iterations</strong> — refines the SVD (5 is usually sufficient).</li>
+            <li><strong>Sparsity threshold</strong> — (0.05 = keep signals 5% above noise floor). In regions with fewer neurons and lower overall activity, a <em>lower</em> threshold helps avoid discarding dim but genuine signals. In denser regions, a higher threshold excludes noise.</li>
+            <li><strong>Spatial regularization</strong> — encourages blob-like components. Increase for larger, spread-out neurons; decrease for very small, compact ones.</li>
+            <li><strong>Chunk size</strong> — decrease for less memory use at the cost of slower processing.</li>
           </ul>
-          <h5>3c: Early Analysis Option</h5>
-          <p>Some workflows stop here for prelim results.</p>
+          <div class="tip-box">
+            <p><strong>Important:</strong> The goal here is not perfection — it is a fast, good-enough initialization for CNMF. NNDSVD is seeding the solution space so CNMF doesn't have to search from scratch. Spending significant time tuning these parameters provides diminishing returns. If your final CNMF results look reasonable, your initialization was good enough.</p>
+          </div>
+
+          <h5>3c · Early Analysis Option</h5>
+          <p>Some workflows stop here for preliminary results. The variance-explained plot shows cumulative % of data variance captured as components are added. For most miniscope datasets, 99%+ is typically accounted for within the first few components. You don't need 100% — the final fraction of a percent usually contains noise. If you're at 95–99%, your initialization is in good shape.</p>
         </div>
 
+        <!-- STEP 4 -->
         <div id="step-4" class="parameter-box">
-          <h4>Step 4: Component Detection</h4>
-          <h5>4a: Watershed Search</h5>
+          <h4><span class="step-badge">Step 4</span> Component Detection</h4>
+
+          <h5>4a · Watershed Parameter Search</h5>
+          <p>Watershed segmentation identifies candidate neurons. Since it's better to overestimate at this stage, this step quickly finds optimal parameters.</p>
           <ul>
-            <li>Min distances, threshold relativity, sigma values, sample size</li>
+            <li><strong>Min distances</strong> — minimum pixel distance between neuron centers (e.g., 10, 20, 30 tests different spacings).</li>
+            <li><strong>Threshold relativity</strong> — how much brighter than surroundings a peak needs to be (0.1 = 10% brighter). Think of this as the elevation cutoff on a topographic map — lowering it detects more candidates, including noise. The CNMF downstream will prune false positives, so over-seeding here is not catastrophic, just slower. If you get consistently fewer components than expected, try lowering this. If you then see overlapping or unclear components in the final output, you over-seeded.</li>
+            <li><strong>Sigma values</strong> — smoothing before peak-finding (1.0 = sharp, 2.0 = slightly blurry).</li>
+            <li><strong>Sample size</strong> — components to test (20 is usually enough).</li>
           </ul>
-          <h5>4b: Apply Best Params</h5>
-          <h5>4c: Merging Units</h5>
-          <h5>4d: Temporal Extraction</h5>
-          <h5>4e: AC Initialization</h5>
-          <h5>4f: Final Component Prep</h5>
-          <h5>4g: Temporal Merging</h5>
+
+          <h5>4b · Apply Best Parameters</h5>
+          <div class="bug-box">
+            <p><strong>Known bug:</strong> After Step 4a suggests parameters, you must <strong>deselect and then reselect</strong> the "Apply Filter / Apply Search" option before running Step 4b. Skipping this causes the step to default to cache from a previous run (typically <code>min_distance=20</code>) rather than the new suggestions. This issue does not apply when loading parameters from a JSON file.</p>
+          </div>
+          <ul>
+            <li><strong>Minimum region size</strong> — smallest neuron size you'll accept. Better to be permissive here; small components can be filtered later.</li>
+          </ul>
+
+          <h5>4c · Merging Units</h5>
+          <p>Collapses spatially overlapping components that were over-segmented in 4b.</p>
+          <ul>
+            <li><strong>Distance Threshold</strong> — how close (px) two centers need to be to consider merging (25 px is a good start).</li>
+            <li><strong>Size Ratio Threshold</strong> — won't merge if one component is much larger (5.0 = up to 5× size difference).</li>
+            <li><strong>Minimum Component Size</strong> — removes anything smaller than this (9 px = 3×3 minimum).</li>
+          </ul>
+
+          <h5>4d · Temporal Signal Extraction</h5>
+          <p>Extracts calcium traces from each spatial component — going from "where are the neurons" to "what are they doing."</p>
+          <ul>
+            <li><strong>Batch Size</strong> — components per batch (10 is safe).</li>
+            <li><strong>Frame Chunk Size</strong> — frames per load (10,000 works for most systems).</li>
+            <li><strong>Component Limit</strong> — for testing, process a subset first.</li>
+            <li><strong>Memory Management</strong> — keep on unless you have unlimited RAM.</li>
+          </ul>
+
+          <h5>4e · AC Initialization</h5>
+          <p>Prepares the spatial (A) and temporal (C) matrices for CNMF. Skip component 0 (background).</p>
+          <ul>
+            <li><strong>max</strong> — normalize to brightest pixel (default, works well).</li>
+            <li><strong>l1</strong> — normalize by total brightness; use when component sizes vary a lot.</li>
+            <li><strong>l2</strong> — normalize by energy; mathematical option.</li>
+            <li><strong>none</strong> — raw values; only if you know what you're doing.</li>
+          </ul>
+
+          <h5>4f · Final Component Preparation</h5>
+          <p>Quality control before expensive processing. Remove NaN, empty, and flat components. These will break downstream steps if left in.</p>
+
+          <h5>4g · Temporal Merging</h5>
+          <p>Final cleanup — merges components that are probably the same neuron split across detections.</p>
+          <ul>
+            <li><strong>Temporal Correlation Threshold</strong> — how similar traces need to be (0.75 = 75% similar).</li>
+            <li><strong>Spatial Overlap Threshold</strong> — how much components must overlap spatially (0.3 = 30% minimum).</li>
+          </ul>
         </div>
 
+        <!-- STEP 5 -->
         <div id="step-5" class="parameter-box">
-          <h4>Step 5: CNMF Preparation</h4>
-          <h5>5a: Noise Estimation</h5>
-          <h5>5b: Validation & Setup</h5>
+          <h4><span class="step-badge">Step 5</span> CNMF Preparation</h4>
+
+          <h5>5a · Noise Estimation</h5>
+          <p>Estimates per-pixel noise across the field of view. Critical for CNMF — it tells the algorithm which parts of the signal to trust.</p>
+          <ul>
+            <li><strong>Noise Scaling Factor</strong> — in active regions, noise is higher due to shot noise from calcium indicators. Default 1.5 scales up the estimate in bright areas.</li>
+            <li><strong>Smoothing Sigma</strong> — spatially smooths the noise map to avoid pixel-to-pixel variation (1.0 = gentle).</li>
+            <li><strong>Background Threshold</strong> — <em>mean</em> (good default), <em>median</em> (more robust to outliers), or <em>custom</em>.</li>
+          </ul>
+
+          <h5>5b · Validation &amp; Setup</h5>
+          <p>Quality control checkpoint before CNMF computation.</p>
+          <ul>
+            <li><strong>Check for NaN/Inf</strong> — these will break CNMF. Always check (may be slow on huge datasets).</li>
+            <li><strong>Compute Full Statistics</strong> — detailed component stats for troubleshooting.</li>
+            <li><strong>Size Filtering</strong> — minimum 10 px, maximum 1,000 px. Components outside this range are likely artifacts or merged neurons.</li>
+          </ul>
         </div>
 
+        <!-- STEP 6 -->
         <div id="step-6" class="parameter-box">
-          <h4>Step 6: CNMF Processing</h4>
-          <h5>6a: YrA Computation</h5>
-          <h5>6b: YrA Validation</h5>
-          <h5>6c: Parameter Suggestion</h5>
-          <h5>6d: Update Temporal Components</h5>
-          <h5>6e: Filter & Validate</h5>
+          <h4><span class="step-badge">Step 6</span> CNMF Processing</h4>
+
+          <h5>6a · YrA Computation</h5>
+          <p>Computes YrA — the raw projection of the video data onto each component's spatial footprint. This gives the corresponding fluorescence signal at each timepoint for each neuron, before any denoising or spike inference. This is one of the computational bottlenecks of CNMF.</p>
+          <ul>
+            <li><strong>Subtract Background</strong> — recommended.</li>
+            <li><strong>Use Float32</strong> — cuts memory in half with minimal precision loss. Always recommended.</li>
+            <li><strong>Fix NaN Values</strong> — replace with zeros before computation.</li>
+          </ul>
+
+          <h5>6b · YrA Validation</h5>
+          <p>Sanity check on the YrA computation. <strong>What YrA actually means:</strong> it is the raw projection of video data onto each spatial footprint — not a measure of variance explained. High YrA at a given time means strong fluorescence in that neuron's footprint at that moment. This projection feeds into the AR/sparsity optimization in Step 6d.</p>
+          <ul>
+            <li><strong>Units to Analyze</strong> — 5 is usually enough to spot issues.</li>
+            <li><strong>Frame Selection</strong> — random, start/middle/end (highest_variance not yet implemented).</li>
+            <li><strong>Number of Frames</strong> — 1,000 is sufficient for validation.</li>
+          </ul>
+
+          <h5>6c · Parameter Suggestions for Temporal Update</h5>
+          <p>Analyzes your data to suggest AR order, sparse penalty, max iterations, and zero threshold. It examines SNR distribution, temporal dynamics, AR coefficient strengths, and spike rates.</p>
+          <div class="tip-box">
+            <p><strong>Note on variability:</strong> Running Step 6c multiple times may produce slightly different suggested values due to rounding differences between how suggestions are displayed vs. stored internally. This is expected — it does not indicate a problem. Loading parameters from a JSON file bypasses this entirely.</p>
+          </div>
+
+          <h5>6d · Update Temporal Components</h5>
+          <p>The core CNMF temporal update. Outputs: <strong>C</strong> (denoised calcium traces), <strong>S</strong> (inferred spike trains), <strong>b0/c0</strong> (background), <strong>g</strong> (AR coefficients).</p>
+          <ul>
+            <li><strong>AR Order (p)</strong>
+              <ul>
+                <li><strong>AR=1</strong> — simple linear decay model. If two spikes fire before the signal returns to baseline, they are counted as one event. Produces cleaner, sparser traces.</li>
+                <li><strong>AR=2</strong> — allows more nonlinear dynamics, can resolve closely spaced events, but produces noisier traces. AR order is conventionally an integer — use 1 or 2.</li>
+              </ul>
+            </li>
+            <li><strong>Sparse Penalty</strong> — L1 penalty (sum of absolute spike amplitudes). Higher = fewer but more confident spikes. Lower = more spikes but higher noise risk. If you lower the sparse penalty and are concerned about noise, raise the zero threshold to compensate.</li>
+            <li><strong>Zero Threshold</strong> — values below this are set to zero. Useful complement to a lower sparse penalty: detects more events while suppressing low-amplitude noise.</li>
+            <li><strong>Max Iterations</strong> — 500 is usually sufficient.</li>
+            <li><strong>Chunk Size / Overlap</strong> — 5,000 frames per chunk, 100-frame overlap to avoid edge artifacts.</li>
+            <li><strong>Dask Settings</strong> — 8 workers is good for most systems; match threads per worker to your CPU core count.</li>
+          </ul>
+
+          <h5>6e · Filter &amp; Validate</h5>
+          <p>Removes components that didn't optimize well. Min spike sum, min calcium variance, and min spatial sum thresholds (all default 1e-6) catch dead or artifact components.</p>
         </div>
 
+        <!-- STEP 7 -->
         <div id="step-7" class="parameter-box">
-          <h4>Step 7: Spatial Refinement</h4>
-          <h5>7a: Dilation</h5>
-          <h5>7b: Clustering</h5>
-          <h5>7c: Bounds</h5>
-          <h5>7d: Suggestions</h5>
-          <h5>7e: Spatial Update</h5>
-          <h5>7f: Merging & Validation</h5>
+          <h4><span class="step-badge">Step 7</span> Spatial Refinement</h4>
+
+          <div class="tip-box" style="margin-bottom:16px">
+            <p><strong>What Steps 7a–7d are doing:</strong> These steps prepare and organize the computation for the spatial update in Step 7e — they are not themselves changing what neurons look like. Dilation (7a) gives the update enough context around each footprint. Clustering (7b) and bounding boxes (7c) divide the field of view into manageable local patches so the algorithm only processes the relevant pixels around each neuron cluster, dramatically improving efficiency.</p>
+          </div>
+
+          <h5>7a · Spatial Component Dilation</h5>
+          <p>Expands spatial footprints for better coverage. CNMF footprints are often conservatively tight.</p>
+          <ul>
+            <li><strong>Dilation Window Size</strong> — radius of structuring element (3 px typical). Larger = more expansion, risk of merging neighbors.</li>
+            <li><strong>Intensity Threshold</strong> — only dilate pixels above this fraction of component max (0.1 = 10%). Higher = more conservative.</li>
+          </ul>
+
+          <h5>7b · Component Clustering</h5>
+          <p>Groups nearby components into clusters for efficient local processing.</p>
+          <ul>
+            <li><strong>Max Cluster Size</strong> — 10 components default.</li>
+            <li><strong>Min Area / Min Intensity</strong> — thresholds to exclude trivially small or dim components from clustering.</li>
+            <li><strong>Overlap Threshold</strong> — 0.2 (20%) default.</li>
+          </ul>
+
+          <h5>7c · Component Boundary Calculation</h5>
+          <p>Creates bounding boxes around clusters — rectangular regions used to limit the spatial update to relevant areas.</p>
+          <ul>
+            <li><strong>Dilation Radius</strong> (10 px) — expands footprints before calculating bounds.</li>
+            <li><strong>Padding</strong> (20 px) — extra space around the dilated shapes; important near cluster edges.</li>
+            <li><strong>Minimum Size</strong> (40 px) — smallest allowed bounding box.</li>
+            <li><strong>Intensity Threshold</strong> (0.05) — what fraction of a component's max is considered "part of the neuron."</li>
+          </ul>
+
+          <h5>7d · Parameter Suggestions for Spatial Update</h5>
+          <p>Analyzes temporal variability, spatial coherence, signal strength, and component shape to suggest minimum STD threshold, penalty scale, and maximum penalty for Step 7e. Treat these as an informed starting hypothesis.</p>
+          <p><strong>Common scenarios:</strong></p>
+          <ul>
+            <li>Neurons look fragmented → lower penalty values</li>
+            <li>Neurons are merging → higher penalty values</li>
+            <li>Missing dim neurons → use aggressive (lower) STD threshold</li>
+            <li>Too much noise → use conservative (higher) STD threshold</li>
+          </ul>
+
+          <h5>7e · Spatial Update</h5>
+          <p>Multi-penalty LASSO regression on local video regions. This is the longest step in the pipeline for large datasets.</p>
+          <ul>
+            <li><strong>Min / Max Penalty</strong> — LASSO penalty range. Higher values → more compact, tightly defined footprints. Lower values → more expansive.</li>
+            <li><strong>Min STD</strong> — pixels below this variability are excluded from the update.</li>
+          </ul>
+          <div class="tip-box">
+            <p><strong>On spatial maps:</strong> The footprint shows which pixels the signal is coming from — not necessarily the full anatomical extent of the neuron. Neurons may be larger than their detected footprint depending on lens configuration, GCaMP expression level, and camera angle. As long as you are not making morphological claims, either a compact or expansive footprint is defensible. The temporal signals carry the scientific information.</p>
+          </div>
+
+          <h5>7f · Merging &amp; Validation</h5>
+          <p>Merges updated spatial components, handles cluster-boundary overlaps, and validates the final spatial result.</p>
+          <ul>
+            <li><strong>Apply smoothing / Smoothing Sigma</strong> — optional Gaussian smoothing. Be cautious: too high a sigma causes footprints to bleed into large, diffuse blobs that may overlap neighboring neurons. Blocky or rectangular-looking components are more likely caused by bounding box geometry from the clustering step — reducing sigma will not fix that artifact. If components look unnaturally spread or merged, reduce sigma or turn off smoothing.</li>
+            <li><strong>Handle overlaps</strong> — keep on in almost all cases. Turning it off can produce inconsistent boundaries where cluster windows overlap.</li>
+            <li><strong>Save both versions</strong> — saves raw and smoothed versions for comparison.</li>
+          </ul>
+          <div class="tip-box">
+            <p>Step 7f is quick to re-run relative to 7e — experiment with smoothing settings here without redoing the full spatial update.</p>
+          </div>
         </div>
 
+        <!-- STEP 8 -->
         <div id="step-8" class="parameter-box">
-          <h4>Step 8: Final Processing & Export</h4>
-          <h5>8a: YrA</h5>
-          <h5>8b: Final Temporal Update</h5>
-          <h5>8c: Filtering & Export (Zarr/NumPy/JSON/Pickle)</h5>
+          <h4><span class="step-badge">Step 8</span> Final Processing &amp; Export</h4>
+
+          <h5>8a · YrA Computation</h5>
+          <p>Recomputes YrA using the refined spatial components from Step 7. This gives each neuron's temporal trace computed against better footprints than Step 6 had access to. Use <strong>step7f_A_merged</strong> as the spatial component source.</p>
+
+          <h5>8b · Final Temporal Update</h5>
+          <p>Re-runs the CNMF temporal update (CVXPY with AR modeling and sparsity constraints) on the improved YrA from Step 8a. See Step 6d for a full explanation of AR order and sparse penalty tradeoffs — the same logic applies here.</p>
+          <ul>
+            <li><strong>Include background</strong> — incorporates background components (b, f).</li>
+            <li><strong>Chunk Size / Overlap</strong> — temporal chunking for memory efficiency; chunks are processed independently then merged.</li>
+          </ul>
+          <div class="tip-box">
+            <p><strong>Why Step 8 matters:</strong> Step 6 produces the first full CNMF solution. Step 8 re-runs the temporal update using the improved spatial footprints from Step 7 — that is the key reason it matters. Because the spatial components are more accurate after Step 7's refinement, the temporal traces from Step 8 are cleaner. Note that because the solution is already near convergence, parameter choices here tend to have subtler effects than the same changes in Step 6. Both steps deserve careful attention; Step 8 is the last opportunity to refine your final traces before export.</p>
+          </div>
+          <div class="tip-box">
+            <p><strong>Cross-session comparisons:</strong> Using identical Step 8 parameters across all animals and sessions means resulting traces are mathematically comparable on an absolute scale — no Z-scoring required before comparing recordings. This holds assuming stable GCaMP expression and consistent optical conditions across sessions. If conditions varied substantially, Z-score before comparing regardless. Either approach is valid; consistency is the key.</p>
+          </div>
+
+          <h5>8c · Final Filtering &amp; Export</h5>
+          <p>Final quality filtering (min component size, min SNR, min correlation), then export in multiple formats.</p>
+          <div class="output-grid">
+            <div class="output-item"><strong>Zarr</strong><span>Chunked storage — ideal for large-scale, out-of-memory analysis</span></div>
+            <div class="output-item"><strong>NumPy</strong><span>Compatible with most Python analysis pipelines</span></div>
+            <div class="output-item"><strong>JSON</strong><span>Human-readable metadata and component IDs; easy to share</span></div>
+            <div class="output-item"><strong>Pickle</strong><span>Complete Python objects with all metadata for quick Python-to-Python transfer</span></div>
+          </div>
+          <p>The export includes a timestamp and all processing parameters for full reproducibility.</p>
         </div>
       </div>
 
+      <!-- ===== PARAMETER TUNING PHILOSOPHY ===== -->
+      <div id="tuning" class="doc-section">
+        <h3>Parameter Tuning Philosophy</h3>
+        <p>One of the most common questions when using MPS is: which parameters matter, and when? Understanding the pipeline's architecture helps.</p>
+
+        <div class="philosophy-block">
+          <h5>Steps 1–5: Initialization</h5>
+          <p>Their job is to give CNMF a well-structured starting point. A CNMF run from random initialization would take far longer to converge and might settle into a suboptimal local minimum — analogous to searching for a mountain peak when you've only been shown a narrow window of the landscape. Preprocessing, denoising, motion correction, NNDSVD, and watershed all serve to place the algorithm close to the right answer before the expensive optimization begins. <strong>Over-tuning parameters here provides diminishing returns. Focus your energy on Steps 6, 7, and 8.</strong></p>
+        </div>
+
+        <div class="philosophy-block">
+          <h5>Steps 6 &amp; 8: Most Scientifically Important</h5>
+          <p>These are where the actual temporal signals are estimated. Step 6 produces the first full CNMF solution; Step 8 refines it using the improved spatial footprints from Step 7. Step 6 parameters have more leverage — changes there can produce substantially different results because the algorithm has more room to move. Step 8 is where you get the final, cleanest traces, but parameter sensitivity is subtler since the solution is already near convergence.</p>
+        </div>
+
+        <div class="philosophy-block">
+          <h5>Step 7: Spatial Appearance</h5>
+          <p>If you care about how footprints look — for figures, presentations, or ROI definition — tune Step 7. But recognize that for most scientific conclusions, the spatial map is a reference, not the result. Neurons may not fully illuminate even with GCaMP expression depending on lens position, focal plane, expression level, and vasculature. The shape you see is where reliable signal is coming from, not necessarily the full anatomical extent of the cell.</p>
+        </div>
+
+        <div class="philosophy-block">
+          <h5>On Neuron Counts in Sparse Brain Regions</h5>
+          <p>If you are recording from a region with few neurons (e.g., 20–30 per session), this likely reflects your data rather than a pipeline failure. Every additional component you force in must be "paid for" by subtracting from noise and background estimates in the CNMF model. In a recording with 20 bright neurons, adding 2–3 dim candidates risks introducing noise into the traces of all 20. High-quality signals from 20 neurons are more valuable than noisy signals from 25.</p>
+        </div>
+
+        <div class="philosophy-block">
+          <h5>On Parameter Generalizability</h5>
+          <p>Default and suggested parameters are good starting points developed with specific data in mind. Your optimal parameters depend on brain region, calcium indicator kinetics (GCaMP6f vs. GCaMP8f differ meaningfully), lens numerical aperture, recording duration, and expected neuronal density. Treat parameter suggestions as informed hypotheses, and interpret the diagnostic plots at each stage as your evidence for whether to adjust.</p>
+        </div>
+      </div>
+
+      <!-- ===== TIPS ===== -->
       <div id="tips" class="doc-section">
-        <h3>Tips & Best Practices</h3>
+        <h3>Tips &amp; Best Practices</h3>
         <ol>
-          <li>Start small (10% data)</li><li>Monitor memory</li><li>Autosave</li>
-          <li>Check intermediate steps (2f, 6b)</li><li>Over-segment then merge</li>
-          <li>Use temporal chunking for long videos</li>
+          <li><strong>Start small</strong> — test parameters on 10% of your data before running the full pipeline.</li>
+          <li><strong>Monitor memory</strong> — the pipeline is memory-intensive; Step 2c and Step 7e are the main bottlenecks.</li>
+          <li><strong>Save frequently</strong> — enable autosave in the automation menu.</li>
+          <li><strong>Check intermediate results</strong> — use visualization steps 2f and 6b to verify processing quality before continuing.</li>
+          <li><strong>Adjust for your data</strong> — defaults work for most data, but your recording may need tweaks based on brain region and indicator.</li>
+          <li><strong>When in doubt, oversegment</strong> — it's easier to merge components later than to split them.</li>
+          <li><strong>Use parameter suggestions as a starting point</strong> — Steps 4a and 7d analyze your specific data to recommend settings. Treat these as an informed hypothesis, not a prescription. Validate by inspecting the diagnostic plots at each stage.</li>
+          <li><strong>Use temporal chunking in Step 8</strong> — dramatically reduces memory usage for long recordings.</li>
+          <li><strong>Export multiple formats</strong> — different downstream analyses prefer different formats.</li>
+          <li><strong>Document your parameters</strong> — the pipeline saves all parameters automatically for reproducibility.</li>
+          <li><strong>Inspect temporal signals, not just spatial maps</strong> — the calcium traces are the primary scientific output. Spatial footprints are reference maps; don't over-interpret their exact shape.</li>
+          <li><strong>Use consistent parameters across sessions</strong> — identical Step 8 parameters across recordings enable direct trace comparison without Z-scoring (assuming stable imaging conditions).</li>
         </ol>
       </div>
 
+      <!-- ===== ISSUES ===== -->
       <div id="issues" class="doc-section">
-        <h3>Common Issues & Solutions</h3>
-        <h4>Memory errors in YrA</h4><ul><li>Smaller batches; float32; raise dask memory</li></ul>
-        <h4>Fragmented components</h4><ul><li>Lower penalties; lower min-STD</li></ul>
-        <h4>Too many spurious units</h4><ul><li>Increase min size; conservative thresholds</li></ul>
-        <h4>Noisy traces</h4><ul><li>AR p=2; higher sparse penalty; verify noise map</li></ul>
+        <h3>Common Issues &amp; Solutions</h3>
+        <div class="issues-grid">
+          <div class="issue-card">
+            <h5>Memory errors during YrA computation</h5>
+            <ul><li>Reduce components processed at once</li><li>Use float32 precision</li><li>Increase Dask memory limits</li></ul>
+          </div>
+          <div class="issue-card">
+            <h5>Components look fragmented after spatial update</h5>
+            <ul><li>Decrease penalty values in Step 7e</li><li>Check if minimum STD threshold is too high</li></ul>
+          </div>
+          <div class="issue-card">
+            <h5>Too many spurious components detected</h5>
+            <ul><li>Increase minimum component size thresholds</li><li>Use conservative parameter suggestions</li><li>Increase distance threshold in watershed segmentation</li></ul>
+          </div>
+          <div class="issue-card">
+            <h5>Temporal traces look noisy</h5>
+            <ul><li>Try AR p=2 instead of p=1</li><li>Adjust sparse penalty (try higher values)</li><li>Check if noise estimation in Step 5a is accurate</li></ul>
+          </div>
+          <div class="issue-card">
+            <h5>Background components missing</h5>
+            <ul><li>Ensure Step 3b includes component 0</li><li>Check that background removal in 2b isn't too aggressive</li></ul>
+          </div>
+          <div class="issue-card">
+            <h5>Step 8a YrA computation fails</h5>
+            <ul><li>Check that spatial and temporal components have matching unit IDs</li><li>Ensure all required data from previous steps is available</li><li>Try reducing to a component subset for testing</li></ul>
+          </div>
+          <div class="issue-card">
+            <h5>CVXPY solver failures in Step 8b</h5>
+            <ul><li>Reduce max iterations if taking too long</li><li>Code tries ECOS first, then SCS — check solver tolerances</li><li>Check for all-zero trace components</li></ul>
+          </div>
+          <div class="issue-card">
+            <h5>Memory errors during Step 8</h5>
+            <ul><li>Use temporal chunking with smaller chunk sizes</li><li>Process components in batches</li><li>Close other applications to free RAM</li></ul>
+          </div>
+          <div class="issue-card">
+            <h5>Step 4b not applying suggested parameters</h5>
+            <ul><li>Deselect then reselect "Apply Filter / Apply Search" before running</li><li>Or load parameters from a JSON file to bypass this entirely</li></ul>
+          </div>
+          <div class="issue-card">
+            <h5>Spatial components look diffuse or merged after Step 7f</h5>
+            <ul><li>Reduce smoothing sigma or disable smoothing</li><li>Note: blocky/rectangular components come from bounding box geometry, not over-smoothing — reducing sigma won't fix that</li><li>Step 7f can be re-run quickly without redoing Step 7e</li></ul>
+          </div>
+        </div>
       </div>
 
+      <!-- ===== INTERPRETING ===== -->
       <div id="interpreting" class="doc-section">
-        <h3>Interpreting Results</h3>
-        <p>Review A (spatial), C (calcium), S (spikes), QC metrics. Cross-check against videos.</p>
+        <h3>Interpreting Your Results</h3>
+
+        <h4>Spatial Components (A)</h4>
+        <ul>
+          <li><strong>What they show</strong> — the spatial footprint of each neuron.</li>
+          <li><strong>What to look for</strong> — clear, contiguous regions roughly matching expected neuron size.</li>
+          <li><strong>Red flags</strong> — highly fragmented components; components much larger than expected neurons.</li>
+          <li><strong>Important caveat</strong> — the footprint shows where reliable fluorescence was detected, not the full anatomical extent of the neuron. Shape and size are influenced by lens focal plane, expression heterogeneity, and local vasculature. Do not make morphological conclusions from these footprints.</li>
+        </ul>
+
+        <h4>Temporal Components (C)</h4>
+        <ul>
+          <li><strong>What they show</strong> — denoised calcium traces for each neuron.</li>
+          <li><strong>What to look for</strong> — clear calcium transients with good SNR.</li>
+          <li><strong>Red flags</strong> — flat traces, excessive noise, unrealistic dynamics.</li>
+          <li><strong>This is the primary scientific output.</strong> Spend more time evaluating trace quality than spatial map appearance.</li>
+        </ul>
+
+        <h4>Spike Estimates (S)</h4>
+        <ul>
+          <li><strong>What they show</strong> — inferred spike times and amplitudes.</li>
+          <li><strong>What to look for</strong> — sparse events corresponding to calcium transients.</li>
+          <li><strong>Red flags</strong> — continuous spiking; no detected events at all.</li>
+        </ul>
+
+        <h4>Quality Metrics</h4>
+        <ul>
+          <li><strong>Component size distribution</strong> — should match expected neuron sizes for your preparation.</li>
+          <li><strong>Signal amplitude distribution</strong> — should show clear separation from noise.</li>
+          <li><strong>Temporal correlation</strong> — neurons shouldn't be perfectly correlated unless truly synchronized.</li>
+        </ul>
+
+        <h4>Downstream Applications</h4>
+        <ul>
+          <li><strong>Population analysis</strong> — study ensemble activity patterns.</li>
+          <li><strong>Single-cell analysis</strong> — track individual neuron responses.</li>
+          <li><strong>Behavioral correlation</strong> — link neural activity to behavior.</li>
+          <li><strong>Network analysis</strong> — study functional connectivity.</li>
+          <li><strong>Longitudinal studies</strong> — track the same neurons across sessions.</li>
+        </ul>
+
+        <p>Remember: the pipeline provides cleaned signals, but biological interpretation requires domain knowledge. When in doubt, consult the original videos to verify detected components correspond to real neurons.</p>
       </div>
 
+      <!-- ===== ADVANCED FEATURES ===== -->
       <div id="advanced" class="doc-section">
         <h3>Advanced Features</h3>
 
         <h4>Line Splitting Detection</h4>
+        <p>Some miniscope systems produce line-splitting artifacts — signal appearing in the leftmost pixels of frames. The pipeline can automatically detect and remove these frames.</p>
         <div class="code-block">import numpy as np
-def detect_line_splitting_frames(xarray_data):
-    left_edge = xarray_data.isel(width=slice(0, 20))
-    left_edge_means = left_edge.mean(dim=['height','width']).compute()
-    overall_mean = left_edge_means.mean().item()
-    overall_std = left_edge_means.std().item()
-    threshold = overall_mean + 2 * overall_std
-    return np.where(left_edge_means > threshold)[0].tolist()</div>
 
-        <h4>Automation</h4>
+def detect_line_splitting_frames(xarray_data):
+    """
+    Detect line splitting frames by looking for signal in the leftmost 20 pixels.
+
+    Args:
+        xarray_data: xarray DataArray with dimensions ['frame', 'height', 'width']
+
+    Returns:
+        list: Frame indices to drop, e.g. [45, 123, 456]
+    """
+    left_edge = xarray_data.isel(width=slice(0, 20))
+    left_edge_means = left_edge.mean(dim=['height', 'width']).compute()
+    overall_mean = left_edge_means.mean().item()
+    overall_std  = left_edge_means.std().item()
+    threshold = overall_mean + 2 * overall_std
+    problematic_frames = np.where(left_edge_means > threshold)[0]
+    return problematic_frames.tolist()</div>
+        <p>Enable in Step 2a if you notice vertical lines or artifacts on the left edge of your videos.</p>
+        <div class="tip-box">
+          <p><strong>Note:</strong> If no erroneous frames are detected, the <code>all_removed_frames.txt</code> log file will not be created. This is expected — the absence of the file means no frames were removed, not that something went wrong.</p>
+        </div>
+
+        <h4>Batch Processing with Parameters</h4>
         <ul>
-          <li>Automation → Toggle Autorun / Run All / Run From Current</li>
-          <li>Save & load parameter files between datasets</li>
+          <li><strong>Save parameters</strong> — after a successful run, File → Save parameters.</li>
+          <li><strong>Load parameters</strong> — for a new dataset, File → Load parameters. Values are applied directly, bypassing any cache issues.</li>
+          <li><strong>Automation</strong> — enable automation to run multiple steps unattended.</li>
         </ul>
+
+        <h4>Custom Preprocessing Functions</h4>
+        <p>Add custom preprocessing in Step 2a by modifying the <code>post_process</code> parameter in the video loading function.</p>
+
+        <h4>Non-rigid Motion Correction</h4>
+        <p>For datasets with significant non-rigid motion, enable mesh-based correction in Step 2c by specifying a mesh size (e.g., <code>(5,5)</code> for a 5×5 control point grid).</p>
+
+        <h4>Automation Features</h4>
+        <ul>
+          <li>Automation → Toggle Autorun</li>
+          <li>Automation → Configure Autorun (set delays)</li>
+          <li>Automation → Run All Steps</li>
+          <li>Automation → Run From Current Step</li>
+        </ul>
+        <p>Parameter files are automatically applied to each step during autorun. Auto-save preserves parameters after each step.</p>
       </div>
+
+      <!-- ===== SYSTEM REQUIREMENTS ===== -->
+      <div id="system" class="doc-section">
+        <h3>System Requirements</h3>
+        <div class="output-grid">
+          <div class="output-item"><strong>RAM (minimum)</strong><span>32 GB (64 GB+ recommended)</span></div>
+          <div class="output-item"><strong>RAM (recommended)</strong><span>128 GB+ for large datasets</span></div>
+          <div class="output-item"><strong>CPU (minimum)</strong><span>8+ cores</span></div>
+          <div class="output-item"><strong>CPU (recommended)</strong><span>16+ cores for parallel processing</span></div>
+          <div class="output-item"><strong>Storage (minimum)</strong><span>SSD with 2× video size free space</span></div>
+          <div class="output-item"><strong>Storage (recommended)</strong><span>NVMe SSD for fastest I/O</span></div>
+          <div class="output-item"><strong>GPU</strong><span>Not required; can accelerate some operations</span></div>
+          <div class="output-item"><strong>Network</strong><span>Fast connection if using network storage</span></div>
+        </div>
+      </div>
+
     </section>
   </div>
 
@@ -277,8 +692,8 @@ def detect_line_splitting_frames(xarray_data):
         <a class="footer-link" href="installation.html">Installation</a>
       </div>
       <p class="footer-text">
-        © 2024 Neumaier Lab • MPS – Miniscope Processing Suite • Use requires attribution — see
-        <a class="footer-link" href="LICENSE">License</a>
+        © 2024 Neumaier Lab · MPS – Miniscope Processing Suite · Use requires attribution —
+        see <a class="footer-link" href="LICENSE">License</a>
       </p>
     </div>
   </footer>
