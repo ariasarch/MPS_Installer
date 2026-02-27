@@ -90,6 +90,30 @@
             This covers most “API-like” needs for now.
           </p>
         </details>
+
+          <details class="faq-item">
+            <summary>macOS install fails with “rsync: Permission denied” — what’s going on?</summary>
+            <p>
+              This error occurs when macOS blocks the installer from writing into protected system directories
+              (most commonly <code>/Applications</code>) without sufficient privileges.
+            </p>
+            <p>
+              To fix this:
+              <ul>
+                <li>Re-run the installer and choose a user-writable location (for example, <code>~/Applications</code> or your home directory).</li>
+                <li>Alternatively, grant the installer permission via <strong>System Settings → Privacy &amp; Security</strong>
+                    (Full Disk Access may be required).</li>
+                <li>If running from Terminal, ensure the destination directory exists and is writable.</li>
+              </ul>
+            </p>
+            <p>
+              After updating permissions, re-run the installer. Installation has been verified on clean macOS systems
+              using these steps.
+            </p>
+            <p class="faq-meta">
+              Spanish practice: “<strong>permisos</strong>” means permissions — macOS is muy estricta (very strict) about them.
+          </p>
+        </details>
       
         <details class="faq-item">
           <summary>Why isn’t there a recommended “run everything for all sessions” button?</summary>
